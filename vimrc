@@ -76,7 +76,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " gui settings
 if has("gui_running")
-    colorscheme ir_black
+    colorscheme ego
     set cursorline          " highlight current row
     set background=dark     " use dark background by default
     set guioptions=         " get rid of all gui elements
