@@ -76,9 +76,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " gui settings
 if has("gui_running")
-    colorscheme ego
+    colorscheme solarized
     set cursorline          " highlight current row
-    set background=dark     " use dark background by default
+    set background=light    " use dark background by default
     set guioptions=         " get rid of all gui elements
     set autochdir           " always switch to the current file directory
     set mousehide           " hide the mouse cursor when typing
@@ -97,6 +97,7 @@ call 	vundle#rc()
 
 Bundle 	'gmarik/vundle'
 Bundle  'sophacles/vim-bundle-sparkup'
+Bundle  'altercation/vim-colors-solarized'
 Bundle  'The-NERD-tree'
 Bundle  'The-NERD-Commenter'
 Bundle  'taglist.vim'
