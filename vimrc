@@ -64,7 +64,7 @@ nnoremap <C-l> <C-w>l
 let mapleader="," 
 
 nmap <silent> <leader>s :set nolist!<cr>
-nmap <silent> <leader>nt :NERDTree<cr>
+nmap <silent> <leader>nt :NERDTreeToggle<cr>
 
 " use normal regex when search 
 nnoremap / /\v
