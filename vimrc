@@ -98,6 +98,7 @@ call 	vundle#rc()
 Bundle 	'gmarik/vundle'
 Bundle  'sophacles/vim-bundle-sparkup'
 Bundle  'altercation/vim-colors-solarized'
+Bundle  'a.vim'
 Bundle  'The-NERD-tree'
 Bundle  'The-NERD-Commenter'
 Bundle  'taglist.vim'
