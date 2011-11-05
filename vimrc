@@ -74,6 +74,9 @@ nnoremap ? ?\v
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" preview in Marked
+:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
 " gui settings
 if has("gui_running")
     colorscheme solarized
