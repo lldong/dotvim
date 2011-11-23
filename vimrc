@@ -77,6 +77,18 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " preview in Marked
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
+" switch background clolr
+: nnoremap <leader>bg :execute SwitchBackground()<cr>
+: function! SwitchBackground()
+: if has('gui_running')
+:   if &bg=='dark'
+:       set bg=light
+:   else
+:       set bg=dark
+:   endif
+: endif
+: endfunction
+
 " gui settings
 if has("gui_running")
     colorscheme solarized
