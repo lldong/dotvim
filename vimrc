@@ -54,11 +54,29 @@ set listchars=tab:>-,trail:.,eol:$
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start 
 
+" arrow keys are evil
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
 " navigate split windows more easier
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" keep search pattern at the center of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
+" jump to start and end of line using home row keys
+nnoremap H ^
+nnoremap L $
 
 " remap <leader> to ','
 let mapleader="," 
@@ -69,6 +87,9 @@ nmap <silent> <leader>nt :NERDTreeToggle<cr>
 " use normal regex when search 
 nnoremap / /\v
 nnoremap ? ?\v
+
+" make 'Y' yank from the cursor to the end of line
+nnoremap Y y$
 
 " open/source my vimrc file more quickly
 nnoremap <leader>ev :e $MYVIMRC<cr>
