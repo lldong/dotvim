@@ -81,7 +81,7 @@ nnoremap L $
 " remap <leader> to ','
 let mapleader="," 
 
-nmap <silent> <leader>s :set nolist!<cr>
+nmap <silent> <leader>l :set list!<cr>
 nmap <silent> <leader>nt :NERDTreeToggle<cr>
 
 " use normal regex when search 
