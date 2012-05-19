@@ -144,7 +144,6 @@ Bundle  'snipMate'
 Bundle  'surround.vim'
 Bundle  'matchit.zip'
 Bundle  'Match-Bracket-for-Objective-C'
-Bundle  'ragtag.vim'
 Bundle  'SnipMgr'
 Bundle  'EasyMotion'
 
