@@ -110,6 +110,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 : endif
 : endfunction
 
+autocmd FileType ruby setlocal ts=2 sw=2 expandtab
+
 " gui settings
 if has("gui_running")
     colorscheme solarized
@@ -134,6 +136,7 @@ call 	vundle#rc()
 Bundle 	'gmarik/vundle'
 Bundle  'sophacles/vim-bundle-sparkup'
 Bundle  'altercation/vim-colors-solarized'
+Bundle  'vim-ruby/vim-ruby'
 Bundle  'a.vim'
 Bundle  'The-NERD-tree'
 Bundle  'The-NERD-Commenter'
