@@ -151,7 +151,11 @@ Bundle  'EasyMotion'
 
 filetype plugin indent on
 
-" snipMgr settings
-let g:snipmgr_snippets_dir = $HOME."/.vim/snippets"
 " taglist settings
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+
+" UltiSnips settings
+let g:UltiSnipsEditSplit="vertical"
+
+" NerdTree settings
+let NERDTreeChDirMode=1
