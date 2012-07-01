@@ -16,7 +16,7 @@ set timeoutlen=500      " set timeout to 500 milliseconds
 
 set directory=~/.vim-tmp,/var/tmp,/tmp
 
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 set foldenable          " turn on folding
 set foldmethod=marker   " fold on the marker
@@ -45,8 +45,8 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set wrap
-set fo+=o	
-set fo-=r	
+set fo+=o
+set fo-=r
 
 set nolist
 set listchars=tab:>-,trail:.,eol:$
@@ -133,25 +133,26 @@ endif
 " git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 " :BundleInstall
 filetype off
-set 	rtp+=~/.vim/bundle/vundle/
-call 	vundle#rc()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-Bundle 	'gmarik/vundle'
-Bundle  'sophacles/vim-bundle-sparkup'
-Bundle  'altercation/vim-colors-solarized'
-Bundle  'vim-ruby/vim-ruby'
-Bundle  'myusuf3/numbers.vim'
-Bundle  'UltiSnips'
-Bundle  'a.vim'
-Bundle  'The-NERD-tree'
-Bundle  'The-NERD-Commenter'
-Bundle  'Tabular'
-Bundle  'ctrlp.vim'
-Bundle  'taglist.vim'
-Bundle  'surround.vim'
-Bundle  'matchit.zip'
-Bundle  'Match-Bracket-for-Objective-C'
-Bundle  'EasyMotion'
+Bundle 'gmarik/vundle'
+Bundle 'sophacles/vim-bundle-sparkup'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'scrooloose/vim-statline'
+Bundle 'UltiSnips'
+Bundle 'a.vim'
+Bundle 'The-NERD-tree'
+Bundle 'The-NERD-Commenter'
+Bundle 'Tabular'
+Bundle 'ctrlp.vim'
+Bundle 'taglist.vim'
+Bundle 'surround.vim'
+Bundle 'matchit.zip'
+Bundle 'Match-Bracket-for-Objective-C'
+Bundle 'EasyMotion'
 
 filetype plugin indent on
 
