@@ -95,6 +95,9 @@ nnoremap Y y$
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" toggle paste mode
+nnoremap <leader>p :set paste!<cr>
+
 " preview in Marked
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
@@ -137,6 +140,7 @@ Bundle 	'gmarik/vundle'
 Bundle  'sophacles/vim-bundle-sparkup'
 Bundle  'altercation/vim-colors-solarized'
 Bundle  'vim-ruby/vim-ruby'
+Bundle  'myusuf3/numbers.vim'
 Bundle  'UltiSnips'
 Bundle  'a.vim'
 Bundle  'The-NERD-tree'
