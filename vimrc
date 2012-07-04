@@ -35,7 +35,6 @@ set showcmd             " show the command being typed
 set showmatch           " show matching brackets
 set splitbelow          " put new window below the current one
 set splitright          " put new window right of the current one
-set colorcolumn=81      " highlight text beyond 80 characters
 set expandtab           " replace tab with spaces
 set autoindent
 set smartindent 
