@@ -16,8 +16,6 @@ set timeoutlen=500      " set timeout to 500 milliseconds
 
 set directory=~/.vim-tmp,/var/tmp,/tmp
 
-"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-
 set foldenable          " turn on folding
 set foldmethod=marker   " fold on the marker
 set foldlevel=100
@@ -37,7 +35,7 @@ set showcmd             " show the command being typed
 set showmatch           " show matching brackets
 set splitbelow          " put new window below the current one
 set splitright          " put new window right of the current one
-
+set colorcolumn=81      " highlight text beyond 80 characters
 set expandtab           " replace tab with spaces
 set autoindent
 set smartindent 
