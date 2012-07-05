@@ -118,7 +118,6 @@ if has("gui_running")
     set cursorline          " highlight current row
     set background=light    " use dark background by default
     set guioptions=         " get rid of all gui elements
-    set autochdir           " always switch to the current file directory
     set mousehide           " hide the mouse cursor when typing
     set guifont=Monaco:h12
     set columns=90
@@ -158,6 +157,3 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit="vertical"
-
-" NerdTree settings
-let NERDTreeChDirMode=1
