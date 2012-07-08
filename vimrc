@@ -51,6 +51,8 @@ set listchars=tab:>-,trail:.,eol:$
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start 
 
+au FileType ruby call setlocal sts=2
+
 " arrow keys are evil
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -80,6 +82,8 @@ let mapleader=","
 
 nmap <silent> <leader>l :set list!<cr>
 nmap <silent> <leader>nt :NERDTreeToggle<cr>
+nmap <silent> <leader>t :TlistToggle<cr>
+nmap <silent> <leader>a :A<cr>
 
 " use normal regex when search 
 nnoremap / /\v
@@ -139,6 +143,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'scrooloose/vim-statline'
 Bundle 'UltiSnips'
+Bundle 'ack.vim'
 Bundle 'a.vim'
 Bundle 'The-NERD-tree'
 Bundle 'The-NERD-Commenter'
@@ -153,7 +158,11 @@ Bundle 'EasyMotion'
 filetype plugin indent on
 
 " taglist settings
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Use_Right_Window=1
+let Tlist_WinWidth=40
+" disable relative line number in taglist window
+autocmd FileType taglist setlocal norelativenumber
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit="vertical"
