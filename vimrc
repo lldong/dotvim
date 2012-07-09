@@ -51,8 +51,6 @@ set listchars=tab:>-,trail:.,eol:$
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start 
 
-au FileType ruby call setlocal sts=2
-
 " arrow keys are evil
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -100,21 +98,19 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>p :set paste!<cr>
 
 " preview in Marked
-:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 " switch background clolr
-: nnoremap <leader>bg :execute SwitchBackground()<cr>
-: function! SwitchBackground()
-: if has('gui_running')
-:   if &bg=='dark'
-:       set bg=light
-:   else
-:       set bg=dark
-:   endif
-: endif
-: endfunction
-
-autocmd FileType ruby setlocal ts=2 sw=2 expandtab
+nnoremap <leader>bg :execute SwitchBackground()<cr>
+function! SwitchBackground()
+if has('gui_running')
+  if &bg=='dark'
+      set bg=light
+  else
+      set bg=dark
+  endif
+endif
+endfunction
 
 " gui settings
 if has("gui_running")
@@ -156,6 +152,8 @@ Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'EasyMotion'
 
 filetype plugin indent on
+
+autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
 " taglist settings
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
