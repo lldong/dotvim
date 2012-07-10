@@ -122,6 +122,7 @@ if has("gui_running")
     set guifont=Monaco:h12
     set columns=90
     set lines=40
+    set macmeta
 endif
 
 " vundle installation:
@@ -135,9 +136,14 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'scrooloose/vim-statline'
+Bundle 'slimv.vim'
+Bundle 'Auto-Pairs'
+Bundle 'textobj-user'
+Bundle 'textobj-rubyblock'
 Bundle 'UltiSnips'
 Bundle 'ack.vim'
 Bundle 'a.vim'
@@ -150,6 +156,7 @@ Bundle 'surround.vim'
 Bundle 'matchit.zip'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'EasyMotion'
+Bundle 'Gundo'
 
 filetype plugin indent on
 
@@ -164,3 +171,17 @@ autocmd FileType taglist setlocal norelativenumber
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit="vertical"
+
+" RainbowParentheses settings
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" Paredit settings
+au  FileType lisp call PareditInitBuffer()
+au  FileType cl   call PareditInitBuffer()
+au  FileType clj  call PareditInitBuffer()
+au  FileType cljs call PareditInitBuffer()
+au  FileType scm  call PareditInitBuffer()
+au  FileType rkt  call PareditInitBuffer()

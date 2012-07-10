@@ -1,5 +1,9 @@
 snippet log "NSLog"
-NSLog("${1:format}", ${2:...})
+NSLog('${1:format}', ${2:...})
+endsnippet
+
+snippet nsls "BW::NSLocalizedString"
+BW::NSLocalizedString('${1:key}', ${2:nil})
 endsnippet
 
 snippet JSONObjectWithData:options:error:
