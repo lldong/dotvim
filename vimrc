@@ -116,7 +116,7 @@ endfunction
 if has("gui_running")
     colorscheme solarized
     set cursorline          " highlight current row
-    set background=light    " use dark background by default
+    set background=dark     " use dark background by default
     set guioptions=         " get rid of all gui elements
     set mousehide           " hide the mouse cursor when typing
     set guifont=Monaco:h12
