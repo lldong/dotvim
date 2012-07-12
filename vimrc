@@ -51,11 +51,9 @@ set listchars=tab:>-,trail:.,eol:$
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start 
 
-" arrow keys are evil
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+" emacs-like navigation in insert mode
+inoremap <C-f> <right>
+inoremap <C-b> <left>
 
 " navigate split windows more easier
 nnoremap <C-h> <C-w>h
@@ -79,8 +77,6 @@ nnoremap L $
 let mapleader="," 
 
 nmap <silent> <leader>l :set list!<cr>
-nmap <silent> <leader>nt :NERDTreeToggle<cr>
-nmap <silent> <leader>t :TlistToggle<cr>
 nmap <silent> <leader>a :A<cr>
 
 " use normal regex when search 
@@ -93,6 +89,9 @@ nnoremap Y y$
 " open/source my vimrc file more quickly
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" search with Ack
+nnoremap <leader>a :Ack 
 
 " toggle paste mode
 nnoremap <leader>p :set paste!<cr>
@@ -162,26 +161,33 @@ filetype plugin indent on
 
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
-" taglist settings
+" Taglist
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
 " disable relative line number in taglist window
 autocmd FileType taglist setlocal norelativenumber
+nmap <silent> <F4> :TlistToggle<cr>
 
-" UltiSnips settings
+" UltiSnips 
 let g:UltiSnipsEditSplit="vertical"
 
-" RainbowParentheses settings
+" RainbowParentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" Paredit settings
+" Paredit
 au  FileType lisp call PareditInitBuffer()
 au  FileType cl   call PareditInitBuffer()
 au  FileType clj  call PareditInitBuffer()
 au  FileType cljs call PareditInitBuffer()
 au  FileType scm  call PareditInitBuffer()
 au  FileType rkt  call PareditInitBuffer()
+
+" Numbers
+nnoremap <F3> :NumbersToggle<CR>
+
+" NERDTree
+nmap <silent> <F2> :NERDTreeToggle<cr>
