@@ -1,21 +1,23 @@
 set nocompatible " explicitly get out of vi-compatible mode
 
 " vundle installation:
-"   git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"   :BundleInstall
+" git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" :BundleInstall
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'sickill/vim-pasta'
+Bundle 'benmills/vimux'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
@@ -23,6 +25,7 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
+Bundle 'sjl/vitality.vim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'taglist.vim'
@@ -45,6 +48,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'YankRing.vim'
 
 filetype plugin indent on
 
@@ -94,6 +98,16 @@ set listchars=tab:>-,trail:.,eol:$
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start 
 
+" save when losing focus
+au FocusLost * :silent! wall
+
+" resize splits when the window is resized
+au VimResized * :wincmd =
+
+" enter full-screen mode
+noremap  <F1> :set invfullscreen<CR>
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+
 " emacs-like navigation in insert mode
 inoremap <C-f> <right>
 inoremap <C-b> <left>
@@ -103,6 +117,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 
 " keep search pattern at the center of the screen
 nnoremap <silent> n nzz
@@ -142,31 +161,6 @@ nnoremap <leader>p :set paste!<cr>
 " preview in Marked
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
-" switch background clolr
-nnoremap <leader>bg :execute SwitchBackground()<cr>
-function! SwitchBackground()
-if has('gui_running')
-  if &bg=='dark'
-      set bg=light
-  else
-      set bg=dark
-  endif
-endif
-endfunction
-
-" gui settings
-if has("gui_running")
-    colorscheme solarized
-    set cursorline          " highlight current row
-    set background=dark     " use dark background by default
-    set guioptions=         " get rid of all gui elements
-    set mousehide           " hide the mouse cursor when typing
-    set guifont=Monaco:h12
-    set columns=90
-    set lines=40
-    set macmeta
-endif
-
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
 " Taglist
@@ -198,3 +192,17 @@ nnoremap <F3> :NumbersToggle<CR>
 
 " NERDTree
 nmap <silent> <F2> :NERDTreeToggle<cr>
+
+" gui settings
+if has("gui_running")
+    colorscheme solarized
+    set fuoptions=maxvert,maxhorz  " full screen means FULL screen
+    set cursorline                 " highlight current row
+    set background=dark            " use dark background by default
+    set guioptions=                " get rid of all gui elements
+    set mousehide                  " hide the mouse cursor when typing
+    set guifont=Monaco:h12
+    set columns=80
+    set lines=60
+    set macmeta
+endif
