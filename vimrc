@@ -1,4 +1,52 @@
-set nocompatible        " explicitly get out of vi-compatible mode
+set nocompatible " explicitly get out of vi-compatible mode
+
+" vundle installation:
+"   git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"   :BundleInstall
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'a.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Match-Bracket-for-Objective-C'
+Bundle 'matchit.zip'
+Bundle 'mileszs/ack.vim'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
+Bundle 'slimv.vim'
+Bundle 'sophacles/vim-bundle-sparkup'
+Bundle 'taglist.vim'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-rhubarb'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-ruby/vim-ruby'
+
+filetype plugin indent on
 
 set hidden              " change buffers without saving
 set history=1000        " remember last 1000 commands
@@ -13,17 +61,13 @@ set ignorecase          " case insensitive by default
 set incsearch           " use increment search
 set smartcase           " if there are Caps, go case sensitive
 set timeoutlen=500      " set timeout to 500 milliseconds 
-
-set directory=~/.vim-tmp,/var/tmp,/tmp
-
 set foldenable          " turn on folding
 set foldmethod=marker   " fold on the marker
 set foldlevel=100
 set foldopen=block,hor,mark,percent,quickfix,tag
+set directory=~/.vim-tmp,/var/tmp,/tmp
 
-filetype plugin indent on      
 syntax on               " turn on syntax highlighting
-
 colorscheme desert      " default colorscheme
 set laststatus=2        " always show the status line
 set showmode            " show what mode you are in
@@ -44,7 +88,6 @@ set shiftwidth=4
 set wrap
 set fo+=o
 set fo-=r
-
 set nolist
 set listchars=tab:>-,trail:.,eol:$
 
@@ -124,48 +167,12 @@ if has("gui_running")
     set macmeta
 endif
 
-" vundle installation:
-"
-" git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-" :BundleInstall
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'sophacles/vim-bundle-sparkup'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'scrooloose/vim-statline'
-Bundle 'slimv.vim'
-Bundle 'Auto-Pairs'
-Bundle 'textobj-user'
-Bundle 'textobj-rubyblock'
-Bundle 'UltiSnips'
-Bundle 'ack.vim'
-Bundle 'a.vim'
-Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
-Bundle 'Tabular'
-Bundle 'ctrlp.vim'
-Bundle 'taglist.vim'
-Bundle 'surround.vim'
-Bundle 'matchit.zip'
-Bundle 'Match-Bracket-for-Objective-C'
-Bundle 'EasyMotion'
-Bundle 'Gundo'
-
-filetype plugin indent on
-
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
 " Taglist
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
-" disable relative line number in taglist window
 autocmd FileType taglist setlocal norelativenumber
 nmap <silent> <F4> :TlistToggle<cr>
 
