@@ -9,8 +9,6 @@ call vundle#rc()
 
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'sickill/vim-pasta'
-Bundle 'benmills/vimux'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jiangmiao/auto-pairs'
@@ -23,6 +21,7 @@ Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
@@ -35,7 +34,6 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
@@ -192,6 +190,9 @@ nnoremap <F3> :NumbersToggle<CR>
 
 " NERDTree
 nmap <silent> <F2> :NERDTreeToggle<cr>
+
+" Yankring
+let g:yankring_history_file = '.yankring_history_file'
 
 " gui settings
 if has("gui_running")
