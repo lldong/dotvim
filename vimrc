@@ -68,6 +68,7 @@ set foldmethod=marker   " fold on the marker
 set foldlevel=100
 set foldopen=block,hor,mark,percent,quickfix,tag
 set directory=~/.vim-tmp,/var/tmp,/tmp
+set complete=.,b,u,]    " completions search order
 
 syntax on               " turn on syntax highlighting
 colorscheme desert      " default colorscheme
