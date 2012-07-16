@@ -7,8 +7,10 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jiangmiao/auto-pairs'
@@ -46,8 +48,6 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'YankRing.vim'
-
 filetype plugin indent on
 
 set hidden              " change buffers without saving
@@ -194,6 +194,10 @@ nmap <silent> <F2> :NERDTreeToggle<cr>
 
 " Yankring
 let g:yankring_history_file = '.yankring_history_file'
+noremap <silent> <F5> :YRGetElem<cr>
+
+" MiniBufExplorer
+noremap <silent> <F6> :MiniBufExplorer<cr>
 
 " gui settings
 if has("gui_running")
@@ -208,3 +212,14 @@ if has("gui_running")
     set lines=60
     set macmeta
 endif
+
+" remove trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
