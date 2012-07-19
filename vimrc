@@ -7,9 +7,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
 Bundle 'a.vim'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
@@ -22,6 +20,7 @@ Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
@@ -173,7 +172,7 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
 autocmd FileType taglist setlocal norelativenumber
-nmap <silent> <F4> :TlistToggle<cr>
+noremap <silent> <F4> :TlistToggle<cr>
 
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
@@ -193,10 +192,13 @@ au  FileType scm  call PareditInitBuffer()
 au  FileType rkt  call PareditInitBuffer()
 
 " Numbers
-nnoremap <F3> :NumbersToggle<CR>
+noremap <F3> :NumbersToggle<CR>
 
 " NERDTree
-nmap <silent> <F2> :NERDTreeToggle<cr>
+noremap <silent> <F2> :NERDTreeToggle<cr>
+
+" vim-colortoggle
+noremap <silent><F6> :ToggleBg<CR>
 
 " gui settings
 if has("gui_running")
