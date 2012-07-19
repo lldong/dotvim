@@ -104,12 +104,16 @@ au FocusLost * :silent! wall
 au VimResized * :wincmd =
 
 " enter full-screen mode
-noremap  <F1> :set invfullscreen<CR>
-inoremap <F1> <ESC>:set invfullscreen<CR>a
+noremap  <F1> :set invfullscreen<cr>
+inoremap <F1> <ESC>:set invfullscreen<cr>a
 
 " emacs-like navigation in insert mode
 inoremap <C-f> <right>
 inoremap <C-b> <left>
+
+" easy buffer switching
+noremap <up> <ESC>:bp<cr>
+noremap <down> <ESC>:bn<cr>
 
 " navigate split windows more easier
 nnoremap <C-h> <C-w>h
@@ -163,13 +167,15 @@ nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
 " Taglist
+let Tlist_Display_Prototype=1
+let Tlist_Display_Tag_Scope=0
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
 autocmd FileType taglist setlocal norelativenumber
 nmap <silent> <F4> :TlistToggle<cr>
 
-" UltiSnips 
+" UltiSnips
 let g:UltiSnipsEditSplit="vertical"
 
 " RainbowParentheses
@@ -191,13 +197,6 @@ nnoremap <F3> :NumbersToggle<CR>
 
 " NERDTree
 nmap <silent> <F2> :NERDTreeToggle<cr>
-
-" Yankring
-let g:yankring_history_file = '.yankring_history_file'
-noremap <silent> <F5> :YRGetElem<cr>
-
-" MiniBufExplorer
-noremap <silent> <F6> :MiniBufExplorer<cr>
 
 " gui settings
 if has("gui_running")
