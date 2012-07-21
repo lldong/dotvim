@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'a.vim'
+Bundle 'danchoi/ri.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jiangmiao/auto-pairs'
@@ -153,6 +154,10 @@ nnoremap Y y$
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" open word under cursor in Dash
+nmap <leader>di :silent !open dash://iphoneos:<cword><cr>
+nmap <leader>dr :silent !open dash://ruby:<cword><cr>
+
 " search with Ack
 nnoremap <leader>a :Ack 
 
@@ -167,6 +172,7 @@ autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 " Taglist
 let Tlist_Display_Prototype=1
 let Tlist_Display_Tag_Scope=0
+let Tlist_Enable_Fold_Column=0
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
@@ -195,6 +201,7 @@ noremap <F3> :NumbersToggle<CR>
 
 " NERDTree
 noremap <silent> <F2> :NERDTreeToggle<cr>
+autocmd FileType nerdtree setlocal norelativenumber
 
 " vim-colortoggle
 noremap <silent><F6> :ToggleBg<CR>
