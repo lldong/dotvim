@@ -1,0 +1,31 @@
+snippet log "NSLog" i
+NSLog('${1:format}'${2:, ${3:...}})
+endsnippet
+
+snippet view "UIView.alloc.initWithFrame" i
+${1:UIView}.alloc.${2:initWithFrame} 
+endsnippet
+
+snippet cc "UIColor.clearColor" i
+UIColor.clearColor 
+endsnippet
+
+snippet image "UIImage.imageNamed" !b
+UIImage.imageNamed 
+endsnippet
+
+snippet color "UIColor.colorWithRed:green:blue:alpha:" i
+UIColor.colorWithRed(${1:red}, green:${2:green}, blue:${3:blue}, alpha:${4:alpha})
+endsnippet
+
+snippet label "UILabel.alloc.initWithFrame" i
+UILabel.alloc.initWithFrame 
+endsnippet
+
+snippet rect "CGRect" i
+[[${1:x}, ${2:y}], [${3:width}, ${4:height}]]
+endsnippet
+
+snippet nsls "NSLocalizedString" i
+BW.localized_string('${1:key}', ${2:nil})
+endsnippet

@@ -8,9 +8,10 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'a.vim'
-Bundle 'danchoi/ri.vim'
+Bundle 'chrisbra/NrrwRgn'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
+Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -20,6 +21,7 @@ Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'Raimondi/delimitMate'
+Bundle 'Rykka/colorv.vim'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -48,6 +50,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'ZoomWin'
 filetype plugin indent on
 
 set hidden              " change buffers without saving
@@ -102,6 +105,9 @@ au FocusLost * :silent! wall
 
 " resize splits when the window is resized
 au VimResized * :wincmd =
+
+" open vim help in vertical window by default
+cab h vert h
 
 " enter full-screen mode
 noremap  <F1> :set invfullscreen<cr>
@@ -170,6 +176,9 @@ nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
+" Syntastic
+let g:syntastic_ruby_checker='macruby'
+
 " Taglist
 let Tlist_Display_Prototype=1
 let Tlist_Display_Tag_Scope=0
@@ -215,8 +224,9 @@ if has("gui_running")
     set background=dark            " use dark background by default
     set guioptions=                " get rid of all gui elements
     set mousehide                  " hide the mouse cursor when typing
-    set guifont=Monaco:h12
+    set guifont=Droid\ Sans\ Mono:h14
     set columns=80
+    set colorcolumn=80
     set lines=60
     set macmeta
 endif
