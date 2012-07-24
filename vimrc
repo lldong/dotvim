@@ -190,7 +190,7 @@ autocmd FileType taglist setlocal norelativenumber
 noremap <silent> <F4> :TlistToggle<cr>
 
 " UltiSnips
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit='vertical'
 
 " RainbowParentheses
 au VimEnter * RainbowParenthesesToggle
@@ -224,7 +224,7 @@ if has("gui_running")
     set background=dark            " use dark background by default
     set guioptions=                " get rid of all gui elements
     set mousehide                  " hide the mouse cursor when typing
-    set guifont=Droid\ Sans\ Mono:h14
+    set guifont=Droid\ Sans\ Mono:h13
     set columns=80
     set colorcolumn=80
     set lines=60
