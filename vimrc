@@ -12,6 +12,7 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -20,6 +21,7 @@ Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rykka/colorv.vim'
 Bundle 'saghul/vim-colortoggle'
@@ -116,10 +118,6 @@ inoremap <F1> <ESC>:set invfullscreen<cr>a
 " emacs-like navigation in insert mode
 inoremap <C-f> <right>
 inoremap <C-b> <left>
-
-" easy buffer switching
-noremap <up> <ESC>:bp<cr>
-noremap <down> <ESC>:bn<cr>
 
 " navigate split windows more easier
 nnoremap <C-h> <C-w>h
