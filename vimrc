@@ -223,9 +223,9 @@ if has("gui_running")
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
     set guifont=Droid\ Sans\ Mono:h12
-    set columns=80
+    set columns=90
     set colorcolumn=80
-    set lines=60
+    set lines=50
     set macmeta
 endif
 
