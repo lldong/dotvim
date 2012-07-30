@@ -217,12 +217,12 @@ noremap <silent><F6> :ToggleBg<CR>
 " gui settings
 if has("gui_running")
     colorscheme solarized
-    set fuoptions=maxvert,maxhorz  " full screen means FULL screen
-    set cursorline                 " highlight current row
-    set background=dark            " use dark background by default
-    set guioptions=                " get rid of all gui elements
-    set mousehide                  " hide the mouse cursor when typing
-    set guifont=Droid\ Sans\ Mono:h13
+    set fuoptions=maxvert,maxhorz       " full screen means FULL screen
+    set cursorline                      " highlight current row
+    set background=light                " use dark background by default
+    set guioptions=                     " get rid of all gui elements
+    set mousehide                       " hide the mouse cursor when typing
+    set guifont=Droid\ Sans\ Mono:h12
     set columns=80
     set colorcolumn=80
     set lines=60
