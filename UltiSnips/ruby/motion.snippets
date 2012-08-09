@@ -2,6 +2,10 @@ snippet log "NSLog" i
 NSLog('${1:format}'${2:, ${3:...}})
 endsnippet
 
+snippet pm "Print current method name" i
+puts __method__
+endsnippet
+
 snippet view "UIView.alloc.initWithFrame" i
 ${1:UIView}.alloc.${2:initWithFrame} 
 endsnippet
@@ -18,14 +22,25 @@ snippet color "UIColor.colorWithRed:green:blue:alpha:" i
 UIColor.colorWithRed(${1:red}, green:${2:green}, blue:${3:blue}, alpha:${4:alpha})
 endsnippet
 
-snippet label "UILabel.alloc.initWithFrame" i
-UILabel.alloc.initWithFrame 
-endsnippet
-
 snippet rect "CGRect" i
 [[${1:x}, ${2:y}], [${3:width}, ${4:height}]]
 endsnippet
 
 snippet ls "Localized String" i
 '$1'.localized
+endsnippet
+
+snippet tbvc "UITableViewDelegate & UITableViewDataSource" !b
+def tableView(tableView, numberOfRowsInSection:section)
+end
+
+def tableView(tableView, cellForRowAtIndexPath:indexPath)
+end
+
+def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+  tableView.deselectRowAtIndexPath(indexPath, animated:true)
+end
+
+def tableView(tableView, heightForRowAtIndexPath:indexPath)
+end
 endsnippet

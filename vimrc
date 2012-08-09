@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'a.vim'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
@@ -20,13 +21,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
-Bundle 'myusuf3/numbers.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rykka/colorv.vim'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/neocomplcache'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
@@ -45,9 +46,9 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-rhubarb'
-Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -69,14 +70,17 @@ set incsearch           " use increment search
 set smartcase           " if there are Caps, go case sensitive
 set timeoutlen=500      " set timeout to 500 milliseconds 
 set foldenable          " turn on folding
-set foldmethod=marker   " fold on the marker
+set foldmethod=indent
 set foldlevel=100
 set foldopen=block,hor,mark,percent,quickfix,tag
 set directory=~/.vim-tmp,/var/tmp,/tmp
 set complete=.,b,u,]    " completions search order
 
 syntax on               " turn on syntax highlighting
-colorscheme desert      " default colorscheme
+colorscheme solarized
+" set cursorline          " highlight current row
+" set cursorcolumn        " highlight current column
+set background=light    " use light background by default
 set laststatus=2        " always show the status line
 set showmode            " show what mode you are in
 set nohlsearch          " do not highlight for searched phrases
@@ -205,21 +209,22 @@ au  FileType scm  call PareditInitBuffer()
 au  FileType rkt  call PareditInitBuffer()
 
 " Numbers
-noremap <F3> :NumbersToggle<CR>
+noremap <F3> :NumbersToggle<cr>
+
+" ZoomWin
+noremap <leader>zw :ZoomWin<cr>
 
 " NERDTree
 noremap <silent> <F2> :NERDTreeToggle<cr>
 autocmd FileType nerdtree setlocal norelativenumber
 
 " vim-colortoggle
-noremap <silent><F6> :ToggleBg<CR>
+noremap <silent><F6> :ToggleBg<cr>
+let g:default_background_type="light"
 
 " gui settings
 if has("gui_running")
-    colorscheme solarized
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
-    set cursorline                      " highlight current row
-    set background=light                " use dark background by default
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
     set guifont=Droid\ Sans\ Mono:h12
