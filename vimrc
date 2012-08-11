@@ -21,7 +21,6 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rykka/colorv.vim'
 Bundle 'saghul/vim-colortoggle'
@@ -35,6 +34,7 @@ Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'taglist.vim'
+Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-cucumber'
@@ -46,9 +46,9 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-rhubarb'
+Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -77,9 +77,6 @@ set directory=~/.vim-tmp,/var/tmp,/tmp
 set complete=.,b,u,]    " completions search order
 
 syntax on               " turn on syntax highlighting
-colorscheme solarized
-" set cursorline          " highlight current row
-" set cursorcolumn        " highlight current column
 set background=light    " use light background by default
 set laststatus=2        " always show the status line
 set showmode            " show what mode you are in
@@ -212,10 +209,13 @@ au  FileType rkt  call PareditInitBuffer()
 noremap <F3> :NumbersToggle<cr>
 
 " ZoomWin
-noremap <leader>zw :ZoomWin<cr>
+noremap <silent><leader>z :ZoomWin<cr>
+
+" ToggleWords
+noremap <silent><leader>t :ToggleWord<cr>
 
 " NERDTree
-noremap <silent> <F2> :NERDTreeToggle<cr>
+noremap <silent><F2> :NERDTreeToggle<cr>
 autocmd FileType nerdtree setlocal norelativenumber
 
 " vim-colortoggle
@@ -224,6 +224,7 @@ let g:default_background_type="light"
 
 " gui settings
 if has("gui_running")
+    colorscheme solarized
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
