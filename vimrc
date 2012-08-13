@@ -1,8 +1,8 @@
 set nocompatible " explicitly get out of vi-compatible mode
 
-" vundle installation:
-" git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-" :BundleInstall
+" =============================================================================
+" Vundle (http://github.com/gmarik/vundle.git)
+" =============================================================================
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -61,6 +61,9 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'ZoomWin'
 filetype plugin indent on
 
+"==============================================================================
+" Global settings
+"==============================================================================
 set hidden              " change buffers without saving
 set history=1000        " remember last 1000 commands
 set nobackup            " don't backup file
@@ -119,17 +122,31 @@ cab h vert h
 
 " enter full-screen mode
 noremap  <F1> :set invfullscreen<cr>
-inoremap <F1> <ESC>:set invfullscreen<cr>a
+inoremap <F1> <esc>:set invfullscreen<cr>a
 
 " emacs-like navigation in insert mode
+inoremap <C-a> <home>
+inoremap <C-e> <end>
 inoremap <C-f> <right>
 inoremap <C-b> <left>
 
-" navigate split windows more easier
+" emacs-like navigation in command mode
+cnoremap <C-a> <home>
+cnoremap <C-e> <end>
+cnoremap <C-f> <right>
+cnoremap <C-b> <left>
+
+" handling windows more easier
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <leader>cj :wincmd j<cr>:close<cr>
+nnoremap <leader>ck :wincmd k<cr>:close<cr>
+nnoremap <leader>ch :wincmd h<cr>:close<cr>
+nnoremap <leader>cl :wincmd l<cr>:close<cr>
+nnoremap <leader>cc :close<cr>
+nnoremap <leader>cw :cclose<cr>
 
 noremap j gj
 noremap k gk
@@ -151,8 +168,13 @@ nnoremap L $
 " remap <leader> to ','
 let mapleader="," 
 
-nmap <silent> <leader>l :set list!<cr>
-nmap <silent> <leader>a :A<cr>
+nnoremap <silent> <leader>l :set list!<cr>
+
+" completion mapping
+inoremap ^] ^X^]
+inoremap ^F ^X^F
+inoremap ^D ^X^D
+inoremap ^L ^X^L
 
 " use normal regex when search 
 nnoremap / /\v
@@ -177,10 +199,14 @@ nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
+"==============================================================================
+" Plugin settings
+"==============================================================================
+
 " Syntastic
 let g:syntastic_ruby_checker='macruby'
 
-" search with Ack
+" Ack
 nnoremap <leader>a :Ack 
 
 " Taglist
