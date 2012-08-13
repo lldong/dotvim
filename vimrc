@@ -9,6 +9,8 @@ call vundle#rc()
 
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'AutoComplPop'
+Bundle 'AutoTag'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
@@ -32,13 +34,16 @@ Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
+Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'taglist.vim'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -164,9 +169,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>di :silent !open dash://iphoneos:<cword><cr>
 nmap <leader>dr :silent !open dash://ruby:<cword><cr>
 
-" search with Ack
-nnoremap <leader>a :Ack 
-
 " toggle paste mode
 nnoremap <leader>p :set paste!<cr>
 
@@ -177,6 +179,9 @@ autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 
 " Syntastic
 let g:syntastic_ruby_checker='macruby'
+
+" search with Ack
+nnoremap <leader>a :Ack 
 
 " Taglist
 let Tlist_Display_Prototype=1
@@ -198,12 +203,12 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Paredit
-" au  FileType lisp call PareditInitBuffer()
-" au  FileType cl   call PareditInitBuffer()
-" au  FileType clj  call PareditInitBuffer()
-" au  FileType cljs call PareditInitBuffer()
-" au  FileType scm  call PareditInitBuffer()
-" au  FileType rkt  call PareditInitBuffer()
+au  FileType lisp call PareditInitBuffer()
+au  FileType cl   call PareditInitBuffer()
+au  FileType clj  call PareditInitBuffer()
+au  FileType cljs call PareditInitBuffer()
+au  FileType scm  call PareditInitBuffer()
+au  FileType rkt  call PareditInitBuffer()
 
 " Numbers
 noremap <F3> :NumbersToggle<cr>
@@ -228,7 +233,7 @@ if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=Droid\ Sans\ Mono:h12
+    set guifont=Inconsolata:h14
     set columns=90
     set colorcolumn=80
     set lines=50
@@ -245,3 +250,4 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
