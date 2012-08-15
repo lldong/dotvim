@@ -139,13 +139,7 @@ cnoremap <C-b> <left>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <leader>cj :wincmd j<cr>:close<cr>
-nnoremap <leader>ck :wincmd k<cr>:close<cr>
-nnoremap <leader>ch :wincmd h<cr>:close<cr>
-nnoremap <leader>cl :wincmd l<cr>:close<cr>
 nnoremap <leader>cc :close<cr>
-nnoremap <leader>cw :cclose<cr>
 
 noremap j gj
 noremap k gk
