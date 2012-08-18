@@ -11,7 +11,9 @@ Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AutoComplPop'
 Bundle 'AutoTag'
+Bundle 'brookhong/cscope.vim'
 Bundle 'chrisbra/NrrwRgn'
+Bundle 'colorv.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jeetsukumaran/vim-buffergator'
@@ -20,11 +22,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'taglist.vim'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'Raimondi/delimitMate'
-Bundle 'Rykka/colorv.vim'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -36,7 +38,6 @@ Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
-Bundle 'taglist.vim'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-bundler'
@@ -58,6 +59,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'ZoomWin'
+
 filetype plugin indent on
 
 "==============================================================================
@@ -140,7 +142,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <leader>cc :close<cr>
+nnoremap <silent><leader>w :close<cr>
+nnoremap <silent><leader>ww :cclose<cr>
 
 noremap j gj
 noremap k gk
@@ -200,10 +203,17 @@ autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 " Syntastic
 let g:syntastic_ruby_checker='macruby'
 
+" ControlP
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.a$\|\.so$\|\.o$',
+  \ }
+
 " Ack
 nnoremap <leader>a :Ack 
 
 " Taglist
+let Tlist_Show_One_File=1
 let Tlist_Display_Prototype=1
 let Tlist_Display_Tag_Scope=0
 let Tlist_Enable_Fold_Column=0
