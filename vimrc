@@ -14,6 +14,7 @@ Bundle 'AutoTag'
 Bundle 'brookhong/cscope.vim'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'colorv.vim'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jeetsukumaran/vim-buffergator'
@@ -22,7 +23,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'taglist.vim'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
@@ -38,6 +38,7 @@ Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
+Bundle 'taglist.vim'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-bundler'
@@ -86,6 +87,7 @@ set directory=~/.vim-tmp,/var/tmp,/tmp
 set complete=.,b,u,]    " completions search order
 
 syntax on               " turn on syntax highlighting
+colorscheme solarized
 set background=light    " use light background by default
 set laststatus=2        " always show the status line
 set showmode            " show what mode you are in
@@ -253,13 +255,15 @@ noremap <silent><leader>t :ToggleWord<cr>
 noremap <silent><F2> :NERDTreeToggle<cr>
 autocmd FileType nerdtree setlocal norelativenumber
 
+" AutoComplPop
+let g:acp_completeOption = '.,w,b,k,t'
+
 " vim-colortoggle
 noremap <silent><F6> :ToggleBg<cr>
 let g:default_background_type="light"
 
 " gui settings
 if has("gui_running")
-    colorscheme solarized
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
