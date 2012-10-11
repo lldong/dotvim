@@ -10,11 +10,11 @@ call vundle#rc()
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AutoComplPop'
-Bundle 'AutoTag'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'brookhong/cscope.vim'
+Bundle 'camelcasemotion'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'colorv.vim'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'jeetsukumaran/vim-buffergator'
@@ -31,6 +31,7 @@ Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimshell'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
@@ -38,13 +39,15 @@ Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
+Bundle 'spolu/dwm.vim'
+Bundle 'SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -59,13 +62,16 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'VimClojure'
+Bundle 'xolox/vim-easytags'
 Bundle 'ZoomWin'
-
 filetype plugin indent on
 
 "==============================================================================
 " Global settings
 "==============================================================================
+set encoding=utf-8
+set fileencoding=utf-8
 set hidden              " change buffers without saving
 set history=1000        " remember last 1000 commands
 set nobackup            " don't backup file
@@ -121,7 +127,7 @@ au FocusLost * :silent! wall
 au VimResized * :wincmd =
 
 " open vim help in vertical window by default
-cab h vert h
+" cab h vert h
 
 " enter full-screen mode
 noremap  <F1> :set invfullscreen<cr>
@@ -144,8 +150,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <silent><leader>w :close<cr>
-nnoremap <silent><leader>ww :cclose<cr>
 
 noremap j gj
 noremap k gk
@@ -168,6 +172,8 @@ nnoremap L $
 let mapleader="," 
 
 nnoremap <silent> <leader>l :set list!<cr>
+
+nnoremap <leader><leader> <c-^>
 
 " completion mapping
 inoremap ^] ^X^]
@@ -201,6 +207,12 @@ autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 "==============================================================================
 " Plugin settings
 "==============================================================================
+" DWM
+let g:dwm_map_keys=0
+nnoremap <c-n> :call DWM_New()<cr>
+nnoremap <c-c> :call DWM_Close()<cr>
+nnoremap <c-f> :call DWM_Focus()<cr>
+nnoremap <c-m> :call DWM_Full()<cr>
 
 " Syntastic
 let g:syntastic_ruby_checker='macruby'
@@ -222,7 +234,6 @@ let Tlist_Enable_Fold_Column=0
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
-autocmd FileType taglist setlocal norelativenumber
 noremap <silent> <F4> :TlistToggle<cr>
 
 " UltiSnips
@@ -242,14 +253,11 @@ au  FileType cljs call PareditInitBuffer()
 au  FileType scm  call PareditInitBuffer()
 au  FileType rkt  call PareditInitBuffer()
 
-" Numbers
-noremap <F3> :NumbersToggle<cr>
-
 " ZoomWin
-noremap <silent><leader>z :ZoomWin<cr>
+noremap <silent><leader>zw :ZoomWin<cr>
 
 " ToggleWords
-noremap <silent><leader>t :ToggleWord<cr>
+noremap <silent><leader>tw :ToggleWord<cr>
 
 " NERDTree
 noremap <silent><F2> :NERDTreeToggle<cr>
