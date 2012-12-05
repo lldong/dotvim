@@ -10,6 +10,7 @@ call vundle#rc()
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AutoComplPop'
+Bundle 'bbommarito/vim-slim'
 Bundle 'brookhong/cscope.vim'
 Bundle 'camelcasemotion'
 Bundle 'chrisbra/NrrwRgn'
@@ -29,6 +30,7 @@ Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
@@ -64,6 +66,7 @@ Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-foreplay'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'VimClojure'
 Bundle 'xolox/vim-easytags'
@@ -118,7 +121,7 @@ set wrap
 set fo+=o
 set fo-=r
 set nolist
-set listchars=tab:>-,trail:.,eol:$
+set listchars=tab:>-,trail:~,extends:>,nbsp:_,precedes:<,eol:$
 
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start 
@@ -206,6 +209,7 @@ nnoremap <leader>p :set paste!<cr>
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 
 "==============================================================================
 " Plugin settings
@@ -295,4 +299,3 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-
