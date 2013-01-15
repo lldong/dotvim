@@ -113,7 +113,7 @@ set splitbelow          " put new window below the current one
 set splitright          " put new window right of the current one
 set expandtab           " replace tab with spaces
 set autoindent
-set smartindent 
+set smartindent
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
@@ -121,10 +121,10 @@ set wrap
 set fo+=o
 set fo-=r
 set nolist
-set listchars=tab:>-,trail:~,extends:>,nbsp:_,precedes:<,eol:$
+set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 
 " allow backspacing over autoindent, linebreaks and start of insert
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 
 " save when losing focus
 au FocusLost * :silent! wall
