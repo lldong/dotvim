@@ -9,7 +9,6 @@ call vundle#rc()
 
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'AutoComplPop'
 Bundle 'bbommarito/vim-slim'
 Bundle 'brookhong/cscope.vim'
 Bundle 'camelcasemotion'
@@ -19,6 +18,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'epmatsw/ag.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
+Bundle 'guns/vim-clojure-static'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -35,41 +35,49 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimshell'
 Bundle 'sickill/vim-pasta'
-Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
-Bundle 'spolu/dwm.vim'
 Bundle 'SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/rbenv-sentience'
 Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-characterize'
+Bundle 'tpope/vim-afterimage'
 Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-capslock'
+Bundle 'tpope/vim-classpath'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-ctags'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-foreplay'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-rbenv'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-rhubarb'
+Bundle 'tpope/vim-rsi'
 Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-foreplay'
+Bundle 'Valloric/MatchTagAlways'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'VimClojure'
-Bundle 'xolox/vim-easytags'
 Bundle 'ZoomWin'
 filetype plugin indent on
 
@@ -214,12 +222,6 @@ autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 "==============================================================================
 " Plugin settings
 "==============================================================================
-" DWM
-let g:dwm_map_keys=0
-nnoremap <c-n> :call DWM_New()<cr>
-nnoremap <c-c> :call DWM_Close()<cr>
-nnoremap <c-f> :call DWM_Focus()<cr>
-nnoremap <c-m> :call DWM_Full()<cr>
 
 " Syntastic
 let g:syntastic_ruby_checker='macruby'
@@ -241,7 +243,7 @@ let Tlist_Enable_Fold_Column=0
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
-noremap <silent> <F4> :TlistToggle<cr>
+noremap <silent> <F3> :TlistToggle<cr>
 
 " UltiSnips
 let g:UltiSnipsEditSplit='vertical'
@@ -299,3 +301,14 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" tabbar
+let g:tagbar_type_javascript = {
+    \ 'ctagstype' : 'JavaScript',
+    \ 'kinds'     : [
+        \ 'o:objects',
+        \ 'f:functions',
+        \ 'a:arrays',
+        \ 's:strings'
+    \ ]
+\ }
