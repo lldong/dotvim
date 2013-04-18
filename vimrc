@@ -7,7 +7,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bbommarito/vim-slim'
@@ -17,9 +16,12 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'colorv.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'epmatsw/ag.vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'gmarik/vundle'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
+Bundle 'honza/snipmate-snippets'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -27,12 +29,14 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'matchit.zip'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
+Bundle 'rorymckinley/vim-rubyhash'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -47,23 +51,25 @@ Bundle 'SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/rbenv-sentience'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-afterimage'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-capslock'
+Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-ctags'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-foreplay'
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
@@ -75,6 +81,7 @@ Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'vim-ruby/vim-ruby'
@@ -147,18 +154,6 @@ au VimResized * :wincmd =
 " enter full-screen mode
 noremap  <F1> :set invfullscreen<cr>
 inoremap <F1> <esc>:set invfullscreen<cr>a
-
-" emacs-like navigation in insert mode
-inoremap <C-a> <home>
-inoremap <C-e> <end>
-inoremap <C-f> <right>
-inoremap <C-b> <left>
-
-" emacs-like navigation in command mode
-cnoremap <C-a> <home>
-cnoremap <C-e> <end>
-cnoremap <C-f> <right>
-cnoremap <C-b> <left>
 
 " handling windows more easier
 nnoremap <C-h> <C-w>h
@@ -273,6 +268,9 @@ noremap <silent><leader>tw :ToggleWord<cr>
 noremap <silent><F2> :NERDTreeToggle<cr>
 autocmd FileType nerdtree setlocal norelativenumber
 
+" Capslock nmap <Leader>i i<Plug>CapsLockToggle
+imap <C-L> <C-O><Plug>CapsLockToggle
+
 " AutoComplPop
 let g:acp_completeOption = '.,w,b,k,t'
 
@@ -290,6 +288,7 @@ if has("gui_running")
     set colorcolumn=80
     set lines=50
     set macmeta
+    set clipboard=unnamed
 endif
 
 " remove trailing whitespace
