@@ -9,18 +9,20 @@ call vundle#rc()
 
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'bbommarito/vim-slim'
 Bundle 'brookhong/cscope.vim'
 Bundle 'camelcasemotion'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'colorv.vim'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'dgrnbrg/vim-redl'
+Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'epmatsw/ag.vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'gmarik/sudo-gui.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -34,6 +36,7 @@ Bundle 'matchit.zip'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'ngmy/vim-rubocop'
 Bundle 'Raimondi/delimitMate'
 Bundle 'rorymckinley/vim-rubyhash'
 Bundle 'saghul/vim-colortoggle'
@@ -44,11 +47,13 @@ Bundle 'sickill/vim-pasta'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
+Bundle 'skwp/vim-rspec'
+Bundle 'slim-template/vim-slim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'SrcExpl'
+Bundle 'sudo.vim'
 Bundle 'taglist.vim'
-Bundle 'thoughtbot/vim-rspec'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tomtom/tlib_vim'
@@ -87,6 +92,7 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'VimClojure'
 Bundle 'ZoomWin'
+
 filetype plugin indent on
 
 "==============================================================================
@@ -220,7 +226,7 @@ autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 "==============================================================================
 
 " Syntastic
-let g:syntastic_ruby_checker='macruby'
+let g:syntastic_ruby_checkers=['mri']
 
 " ControlP
 let g:ctrlp_custom_ignore = {
@@ -291,6 +297,17 @@ if has("gui_running")
     set clipboard=unnamed
 endif
 
+" tabbar
+let g:tagbar_type_javascript = {
+    \ 'ctagstype' : 'JavaScript',
+    \ 'kinds'     : [
+        \ 'o:objects',
+        \ 'f:functions',
+        \ 'a:arrays',
+        \ 's:strings'
+    \ ]
+\ }
+
 " remove trailing whitespace
 function! <SID>StripTrailingWhitespaces()
     let _s=@/
@@ -302,13 +319,5 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" tabbar
-let g:tagbar_type_javascript = {
-    \ 'ctagstype' : 'JavaScript',
-    \ 'kinds'     : [
-        \ 'o:objects',
-        \ 'f:functions',
-        \ 'a:arrays',
-        \ 's:strings'
-    \ ]
-\ }
+" git commit message
+autocmd Filetype gitcommit setlocal spell textwidth=72
