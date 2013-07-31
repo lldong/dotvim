@@ -9,13 +9,14 @@ call vundle#rc()
 
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'brookhong/cscope.vim'
 Bundle 'camelcasemotion'
 Bundle 'chrisbra/NrrwRgn'
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'colorv.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'dgrnbrg/vim-redl'
-Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'epmatsw/ag.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/sudo-gui.vim'
@@ -39,12 +40,14 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'Raimondi/delimitMate'
+Bundle 'rking/vim-ruby-refactoring'
 Bundle 'rorymckinley/vim-rubyhash'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/vimshell'
 Bundle 'sickill/vim-pasta'
+Bundle 'sjl/badwolf'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
@@ -55,8 +58,8 @@ Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'SrcExpl'
 Bundle 'sudo.vim'
 Bundle 'taglist.vim'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'toggle_words.vim'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/rbenv-sentience'
 Bundle 'tpope/vim-abolish'
@@ -99,6 +102,7 @@ filetype plugin indent on
 "==============================================================================
 " Global settings
 "==============================================================================
+colorscheme solarized
 set encoding=utf-8
 set fileencoding=utf-8
 set hidden              " change buffers without saving
@@ -122,7 +126,6 @@ set directory=~/.vim-tmp,/var/tmp,/tmp
 set complete=.,b,u,]    " completions search order
 
 syntax on               " turn on syntax highlighting
-colorscheme solarized
 set background=light    " use light background by default
 set laststatus=2        " always show the status line
 set showmode            " show what mode you are in
@@ -219,7 +222,9 @@ nnoremap <leader>p :set paste!<cr>
 " preview in Marked
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
+" Filetypes
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 
 "==============================================================================
@@ -296,6 +301,7 @@ if has("gui_running")
     set lines=50
     set macmeta
     set clipboard=unnamed
+    set background=dark
 endif
 
 " tabbar
