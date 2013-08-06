@@ -7,6 +7,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -41,6 +42,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'Raimondi/delimitMate'
 Bundle 'rking/vim-ruby-refactoring'
+Bundle 'rodjek/vim-puppet'
 Bundle 'rorymckinley/vim-rubyhash'
 Bundle 'saghul/vim-colortoggle'
 Bundle 'scrooloose/nerdtree'
@@ -96,7 +98,6 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'VimClojure'
 Bundle 'ZoomWin'
-
 filetype plugin indent on
 
 "==============================================================================
