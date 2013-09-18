@@ -7,7 +7,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -53,7 +52,7 @@ Bundle 'sjl/badwolf'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
-Bundle 'skwp/vim-rspec'
+" Bundle 'skwp/vim-rspec'
 Bundle 'slim-template/vim-slim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
@@ -61,6 +60,7 @@ Bundle 'SrcExpl'
 Bundle 'sudo.vim'
 Bundle 'taglist.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'toggle_words.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/rbenv-sentience'
@@ -103,7 +103,6 @@ filetype plugin indent on
 "==============================================================================
 " Global settings
 "==============================================================================
-colorscheme solarized
 set encoding=utf-8
 set fileencoding=utf-8
 set hidden              " change buffers without saving
@@ -293,6 +292,7 @@ let g:default_background_type="light"
 
 " gui settings
 if has("gui_running")
+    colorscheme solarized
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
