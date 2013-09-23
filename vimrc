@@ -292,11 +292,11 @@ let g:default_background_type="light"
 
 " gui settings
 if has("gui_running")
-    colorscheme solarized
+    colorscheme hemisu
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=Inconsolata:h14
+    set guifont=Hermit:h13
     set columns=90
     set colorcolumn=80
     set lines=50
