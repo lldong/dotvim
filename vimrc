@@ -7,6 +7,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Bundle 'skwp/vim-rspec'
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -17,6 +18,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'colorv.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'dgrnbrg/vim-redl'
+Bundle 'dhruvasagar/vim-table-mode'
 Bundle 'epmatsw/ag.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/sudo-gui.vim'
@@ -52,7 +54,6 @@ Bundle 'sjl/badwolf'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/threesome.vim'
 Bundle 'sjl/vitality.vim'
-" Bundle 'skwp/vim-rspec'
 Bundle 'slim-template/vim-slim'
 Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
@@ -191,7 +192,7 @@ nnoremap L $
 " remap <leader> to ','
 let mapleader="," 
 
-nnoremap <silent> <leader>l :set list!<cr>
+nnoremap <silent>leader>l :set list!<cr>
 
 nnoremap <leader><leader> <c-^>
 
@@ -270,6 +271,14 @@ au  FileType cljs call PareditInitBuffer()
 au  FileType scm  call PareditInitBuffer()
 au  FileType rkt  call PareditInitBuffer()
 
+" Tabular
+if exists(":Tabularize")
+  nmap <leader>a= :Tabularize /=<CR>
+  vmap <leader>a= :Tabularize /=<C>
+  nmap <leader>a: :Tabularize /:\zs<CR>
+  vmap <leader>a: :Tabularize /:\zs<CR>
+endif
+
 " ZoomWin
 noremap <silent><leader>zw :ZoomWin<cr>
 
@@ -329,3 +338,4 @@ autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :c
 
 " git commit message
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
