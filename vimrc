@@ -18,7 +18,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'colorv.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'dgrnbrg/vim-redl'
-Bundle 'dhruvasagar/vim-table-mode'
+" Bundle 'dhruvasagar/vim-table-mode'
 Bundle 'epmatsw/ag.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/sudo-gui.vim'
@@ -270,14 +270,6 @@ au  FileType clj  call PareditInitBuffer()
 au  FileType cljs call PareditInitBuffer()
 au  FileType scm  call PareditInitBuffer()
 au  FileType rkt  call PareditInitBuffer()
-
-" Tabular
-if exists(":Tabularize")
-  nmap <leader>a= :Tabularize /=<CR>
-  vmap <leader>a= :Tabularize /=<CR>
-  nmap <leader>a: :Tabularize /:\zs<CR>
-  vmap <leader>a: :Tabularize /:\zs<CR>
-endif
 
 " ZoomWin
 noremap <silent><leader>zw :ZoomWin<cr>
