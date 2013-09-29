@@ -7,7 +7,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Bundle 'skwp/vim-rspec'
 Bundle 'a.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -284,9 +283,6 @@ autocmd FileType nerdtree setlocal norelativenumber
 " Capslock nmap <Leader>i i<Plug>CapsLockToggle
 imap <C-L> <C-O><Plug>CapsLockToggle
 
-" AutoComplPop
-let g:acp_completeOption = '.,w,b,k,t'
-
 " vim-colortoggle
 noremap <silent><F6> :ToggleBg<cr>
 let g:default_background_type="light"
@@ -303,7 +299,6 @@ if has("gui_running")
     set lines=50
     set macmeta
     set clipboard=unnamed
-    set background=dark
 endif
 
 " tabbar
