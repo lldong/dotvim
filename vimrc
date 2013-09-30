@@ -18,13 +18,14 @@ Bundle 'colorv.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'dgrnbrg/vim-redl'
 Bundle 'dhruvasagar/vim-table-mode'
-Bundle 'epmatsw/ag.vim'
+Bundle 'rking/ag.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
 Bundle 'honza/vim-snippets'
+Bundle 'hwartig/vim-seeing-is-believing'
 Bundle 'itspriddle/vim-marked'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'kchmck/vim-coffee-script'
@@ -231,6 +232,14 @@ autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 " Plugin settings
 "==============================================================================
 
+" Tabular
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
 " Syntastic
 let g:syntastic_ruby_checkers=['mri']
 
@@ -242,6 +251,9 @@ let g:ctrlp_custom_ignore = {
 
 " Ack
 nnoremap <leader>a :Ack 
+
+" Tabular
+
 
 " Taglist
 let Tlist_Show_One_File=1
@@ -286,6 +298,15 @@ imap <C-L> <C-O><Plug>CapsLockToggle
 " vim-colortoggle
 noremap <silent><F6> :ToggleBg<cr>
 let g:default_background_type="light"
+
+" vim-seeing-is-believing
+nmap <buffer> <leader>rr <Plug>(seeing-is-believing-run)
+xmap <buffer> <leader>rr <Plug>(seeing-is-believing-run)
+imap <buffer> <leader>rr <Plug>(seeing-is-believing-run)
+
+nmap <buffer> <leader>mm <Plug>(seeing-is-believing-mark)
+xmap <buffer> <leader>mm <Plug>(seeing-is-believing-mark)
+imap <buffer> <leader>mm <Plug>(seeing-is-believing-mark)
 
 " gui settings
 if has("gui_running")
