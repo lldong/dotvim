@@ -191,7 +191,7 @@ nnoremap L $
 " remap <leader> to ','
 let mapleader="," 
 
-nnoremap <silent>leader>l :set list!<cr>
+nnoremap <silent><leader>l :set list!<cr>
 
 nnoremap <leader><leader> <c-^>
 
