@@ -290,9 +290,6 @@ let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=40
 noremap <silent> <F3> :TlistToggle<cr>
 
-" UltiSnips
-let g:UltiSnipsEditSplit='vertical'
-
 " RainbowParentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -324,8 +321,7 @@ imap <C-L> <C-O><Plug>CapsLockToggle
 noremap <silent><F6> :ToggleBg<cr>
 let g:default_background_type="light"
 
-
-" tabbar
+" tagbar
 let g:tagbar_type_javascript = {
     \ 'ctagstype' : 'JavaScript',
     \ 'kinds'     : [
