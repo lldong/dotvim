@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'a.vim'
+Bundle 'lldong/vim-ruby-xmpfilter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'brookhong/cscope.vim'
@@ -24,7 +25,6 @@ Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
 Bundle 'honza/vim-snippets'
-Bundle 'hwartig/vim-seeing-is-believing'
 Bundle 'itspriddle/vim-marked'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'kchmck/vim-coffee-script'
@@ -59,7 +59,6 @@ Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'SrcExpl'
 Bundle 'sudo.vim'
-Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'taglist.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'thoughtbot/vim-rspec'
@@ -344,8 +343,11 @@ autocmd FileType ruby nmap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
 autocmd FileType ruby xmap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
 autocmd FileType ruby imap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
 
+autocmd FileType ruby nmap <buffer> <leader>cc <Plug>(seeing_is_believing-clean)
+autocmd FileType ruby xmap <buffer> <leader>cc <Plug>(seeing_is_believing-clean)
+autocmd FileType ruby imap <buffer> <leader>cc <Plug>(seeing_is_believing-clean)
+
 " auto insert mark at appropriate spot.
 autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing_is_believing-run)
 autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing_is_believing-run)
 autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
-
