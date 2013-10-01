@@ -18,7 +18,6 @@ Bundle 'colorv.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'dgrnbrg/vim-redl'
 Bundle 'dhruvasagar/vim-table-mode'
-Bundle 'rking/ag.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'gmarik/vundle'
@@ -42,6 +41,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'Raimondi/delimitMate'
+Bundle 'rking/ag.vim'
 Bundle 'rking/vim-ruby-refactoring'
 Bundle 'rodjek/vim-puppet'
 Bundle 'rorymckinley/vim-rubyhash'
@@ -59,6 +59,7 @@ Bundle 'slimv.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'SrcExpl'
 Bundle 'sudo.vim'
+Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'taglist.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'thoughtbot/vim-rspec'
@@ -228,6 +229,34 @@ autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 
+" gui settings
+if has("gui_running")
+    colorscheme hemisu
+    set fuoptions=maxvert,maxhorz       " full screen means FULL screen
+    set guioptions=                     " get rid of all gui elements
+    set mousehide                       " hide the mouse cursor when typing
+    set guifont=Hermit:h13
+    set columns=90
+    set colorcolumn=80
+    set lines=50
+    set macmeta
+    set clipboard=unnamed
+endif
+
+" remove trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" git commit message
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 "==============================================================================
 " Plugin settings
 "==============================================================================
@@ -251,9 +280,6 @@ let g:ctrlp_custom_ignore = {
 
 " Ack
 nnoremap <leader>a :Ack 
-
-" Tabular
-
 
 " Taglist
 let Tlist_Show_One_File=1
@@ -299,28 +325,6 @@ imap <C-L> <C-O><Plug>CapsLockToggle
 noremap <silent><F6> :ToggleBg<cr>
 let g:default_background_type="light"
 
-" vim-seeing-is-believing
-nmap <buffer> <leader>rr <Plug>(seeing-is-believing-run)
-xmap <buffer> <leader>rr <Plug>(seeing-is-believing-run)
-imap <buffer> <leader>rr <Plug>(seeing-is-believing-run)
-
-nmap <buffer> <leader>mm <Plug>(seeing-is-believing-mark)
-xmap <buffer> <leader>mm <Plug>(seeing-is-believing-mark)
-imap <buffer> <leader>mm <Plug>(seeing-is-believing-mark)
-
-" gui settings
-if has("gui_running")
-    colorscheme hemisu
-    set fuoptions=maxvert,maxhorz       " full screen means FULL screen
-    set guioptions=                     " get rid of all gui elements
-    set mousehide                       " hide the mouse cursor when typing
-    set guifont=Hermit:h13
-    set columns=90
-    set colorcolumn=80
-    set lines=50
-    set macmeta
-    set clipboard=unnamed
-endif
 
 " tabbar
 let g:tagbar_type_javascript = {
@@ -333,17 +337,15 @@ let g:tagbar_type_javascript = {
     \ ]
 \ }
 
-" remove trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/=_s
-    call cursor(l, c)
-endfunction
-autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+" vim-ruby-xmpfilter
+let g:xmpfilter_cmd = "seeing_is_believing"
 
-" git commit message
-autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd FileType ruby nmap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
+autocmd FileType ruby xmap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
+autocmd FileType ruby imap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
+
+" auto insert mark at appropriate spot.
+autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing_is_believing-run)
+autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing_is_believing-run)
+autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
 
