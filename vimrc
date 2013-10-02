@@ -333,8 +333,9 @@ let g:tagbar_type_javascript = {
 \ }
 
 " vim-fireplace
-nnoremap <C-e> :Eval<CR>
-nnoremap E :%Eval<CR>
+nnoremap <leader>e :Eval<CR>
+vnoremap <leader>e :Eval<CR>
+nnoremap <leader>E :%Eval<CR>
 
 " vim-ruby-xmpfilter
 let g:xmpfilter_cmd = "seeing_is_believing"
