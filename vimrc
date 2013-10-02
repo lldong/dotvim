@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'a.vim'
-Bundle 'lldong/vim-ruby-xmpfilter'
+Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'brookhong/cscope.vim'
@@ -97,7 +97,6 @@ Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'VimClojure'
 Bundle 'ZoomWin'
 filetype plugin indent on
 
@@ -331,11 +330,6 @@ let g:tagbar_type_javascript = {
         \ 's:strings'
     \ ]
 \ }
-
-" vim-fireplace
-nnoremap <leader>e :Eval<CR>
-vnoremap <leader>e :Eval<CR>
-nnoremap <leader>E :%Eval<CR>
 
 " vim-ruby-xmpfilter
 let g:xmpfilter_cmd = "seeing_is_believing"
