@@ -278,7 +278,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " Ack
-nnoremap <leader>a :Ack 
+nmap <leader>a :Ack 
 
 " Taglist
 let Tlist_Show_One_File=1
@@ -331,6 +331,10 @@ let g:tagbar_type_javascript = {
         \ 's:strings'
     \ ]
 \ }
+
+" vim-fireplace
+nnoremap <C-e> :Eval<CR>
+nnoremap E :%Eval<CR>
 
 " vim-ruby-xmpfilter
 let g:xmpfilter_cmd = "seeing_is_believing"
