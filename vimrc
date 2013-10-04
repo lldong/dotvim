@@ -342,11 +342,10 @@ autocmd FileType ruby nmap <buffer> <leader>cc <Plug>(seeing_is_believing-clean)
 autocmd FileType ruby xmap <buffer> <leader>cc <Plug>(seeing_is_believing-clean)
 autocmd FileType ruby imap <buffer> <leader>cc <Plug>(seeing_is_believing-clean)
 
-autocmd FileType ruby nmap <buffer> <leader>rr <Plug>(seeing_is_believing-run_-x)
-autocmd FileType ruby xmap <buffer> <leader>rr <Plug>(seeing_is_believing-run_-x)
-autocmd FileType ruby imap <buffer> <leader>rr <Plug>(seeing_is_believing-run_-x)
+autocmd FileType ruby nmap <buffer> <leader>rr <Plug>(seeing_is_believing-run)
+autocmd FileType ruby xmap <buffer> <leader>rr <Plug>(seeing_is_believing-run)
+autocmd FileType ruby imap <buffer> <leader>rr <Plug>(seeing_is_believing-run)
 
-" auto insert mark at appropriate spot.
-autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing_is_believing-run)
-autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing_is_believing-run)
-autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
+autocmd FileType ruby nmap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
+autocmd FileType ruby xmap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
+autocmd FileType ruby imap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
