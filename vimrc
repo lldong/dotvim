@@ -250,7 +250,7 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-autocmd FileType c,cpp,objc,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,objc,java,javascript,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " git commit message
 autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -260,15 +260,10 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 "==============================================================================
 
 " Tabular
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
-
-" Syntastic
-let g:syntastic_ruby_checkers=['mri']
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " ControlP
 let g:ctrlp_custom_ignore = {
