@@ -326,6 +326,9 @@ let g:tagbar_type_javascript = {
     \ ]
 \ }
 
+" Syntastic
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 " vim-ruby-xmpfilter
 let g:xmpfilter_cmd = "seeing_is_believing"
 
