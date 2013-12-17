@@ -222,6 +222,11 @@ nnoremap <leader>p :set paste!<cr>
 " preview in Marked
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
+" ruby refactoring
+nnoremap <Leader>: :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
+nnoremap <Leader>{ :%s/{\([^ ]\)/{ \1/gc<CR>
+nnoremap <Leader>} :%s/\([^ ]\)}/\1 }/gc<CR>
+
 " Filetypes
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
