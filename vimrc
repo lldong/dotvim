@@ -161,6 +161,9 @@ au VimResized * :wincmd =
 " open vim help in vertical window by default
 " cab h vert h
 
+" yank to OS X clipboard
+vnoremap <silent> <leader>c :w !pbcopy<cr><cr>
+
 " enter full-screen mode
 noremap  <F1> :set invfullscreen<cr>
 inoremap <F1> <esc>:set invfullscreen<cr>a
