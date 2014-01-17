@@ -162,7 +162,7 @@ au VimResized * :wincmd =
 " cab h vert h
 
 " yank to OS X clipboard
-vnoremap <silent> <leader>c :w !pbcopy<cr><cr>
+vmap <C-c> :w !pbcopy<CR><CR> 
 
 " enter full-screen mode
 noremap  <F1> :set invfullscreen<cr>
