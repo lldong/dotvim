@@ -11,24 +11,11 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle (required)
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'Match-Bracket-for-Objective-C'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimproc', {'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'}}
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'SrcExpl'
-NeoBundle 'Valloric/MatchTagAlways'
-NeoBundle 'ZoomWin'
+" NeoBundle 'bling/vim-airline'
 NeoBundle 'a.vim'
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'brookhong/cscope.vim'
 NeoBundle 'camelcasemotion'
 NeoBundle 'chrisbra/NrrwRgn'
@@ -48,12 +35,17 @@ NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'Match-Bracket-for-Objective-C'
 NeoBundle 'matchit.zip'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'ngmy/vim-rubocop'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'rking/vim-ruby-refactoring'
 NeoBundle 'rodjek/vim-puppet'
@@ -61,6 +53,13 @@ NeoBundle 'rorymckinley/vim-rubyhash'
 NeoBundle 'saghul/vim-colortoggle'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/vimproc', {'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'}}
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'sickill/vim-pasta'
 NeoBundle 'sjbach/lusty'
 NeoBundle 'sjl/badwolf'
@@ -70,6 +69,7 @@ NeoBundle 'sjl/vitality.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'slimv.vim'
 NeoBundle 'sophacles/vim-bundle-sparkup'
+NeoBundle 'SrcExpl'
 NeoBundle 'sudo.vim'
 NeoBundle 't9md/vim-ruby-xmpfilter'
 NeoBundle 'taglist.vim'
@@ -107,7 +107,9 @@ NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'wikitopian/hardmode'
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
@@ -417,4 +419,9 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)"
       \: "\<TAB>"
+
+" embrace the hard mode
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
 
