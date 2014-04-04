@@ -73,7 +73,6 @@ NeoBundle 'SrcExpl'
 NeoBundle 'sudo.vim'
 NeoBundle 't9md/vim-ruby-xmpfilter'
 NeoBundle 'taglist.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'toggle_words.vim'
 NeoBundle 'tomtom/tlib_vim'
@@ -230,10 +229,6 @@ nnoremap Y y$
 " open/source my vimrc file more quickly
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" open word under cursor in Dash
-nmap <leader>di :silent !open dash://iphoneos:<cword><cr>
-nmap <leader>dr :silent !open dash://ruby:<cword><cr>
 
 " toggle paste mode
 nnoremap <leader>p :set paste!<cr>
@@ -421,7 +416,13 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \: "\<TAB>"
 
 " embrace the hard mode
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
+" toggle relative number 
+function! NumberToggle()
+  set rnu!
+endfunc
+nnoremap <leader>rn :call NumberToggle()<cr>
 
