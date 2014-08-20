@@ -252,7 +252,7 @@ if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=Hermit:h13
+    set guifont=InputMonoCondensed:h14
     set columns=90
     set colorcolumn=80
     set lines=50
@@ -327,7 +327,8 @@ noremap <silent><leader>tw :ToggleWord<cr>
 noremap <silent><F2> :NERDTreeToggle<cr>
 autocmd FileType nerdtree setlocal norelativenumber
 
-" Capslock nmap <Leader>i i<Plug>CapsLockToggle
+" Capslock 
+" nmap <Leader>i i<Plug>CapsLockToggle
 imap <C-L> <C-O><Plug>CapsLockToggle
 
 " vim-colortoggle
