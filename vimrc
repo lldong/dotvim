@@ -24,6 +24,8 @@ NeoBundle 'colorv.vim'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'dgrnbrg/vim-redl'
 NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'enomsg/vim-haskellConcealPlus'
+NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'gmarik/sudo-gui.vim'
 NeoBundle 'gmarik/vundle'
@@ -139,6 +141,7 @@ set foldlevel=100
 set foldopen=block,hor,mark,percent,quickfix,tag
 set directory=~/.vim-tmp,/var/tmp,/tmp
 set complete=.,b,u,]    " completions search order
+set re=1                " use the old regex engine to speed up ruby syntax highlighting
 
 syntax on               " turn on syntax highlighting
 set background=light    " use light background by default
