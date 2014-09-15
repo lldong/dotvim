@@ -1,121 +1,107 @@
 " =============================================================================
-" NeoBundle (git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim)
+" VIM-PLUG (curl -fLo ~/.vim/autoload/plug.vim \
+"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
 " =============================================================================
-if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call plug#begin('~/.vim/plugged')
 
-" Let NeoBundle manage NeoBundle (required)
-NeoBundleFetch 'Shougo/neobundle.vim'
+Plug 'a.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'brookhong/cscope.vim'
+Plug 'camelcasemotion'
+Plug 'chrisbra/NrrwRgn'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'colorv.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'dgrnbrg/vim-redl'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'enomsg/vim-haskellConcealPlus'
+Plug 'gabebw/vim-spec-runner'
+Plug 'garbas/vim-snipmate'
+Plug 'gmarik/sudo-gui.vim'
+Plug 'godlygeek/tabular'
+Plug 'guns/vim-clojure-static'
+Plug 'honza/vim-snippets'
+Plug 'itspriddle/vim-marked'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-powerline'
+Plug 'majutsushi/tagbar'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Match-Bracket-for-Objective-C'
+Plug 'matchit.zip'
+Plug 'mileszs/ack.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ngmy/vim-rubocop'
+Plug 'Raimondi/delimitMate'
+Plug 'rking/ag.vim'
+Plug 'rking/vim-ruby-refactoring'
+Plug 'rodjek/vim-puppet'
+Plug 'rorymckinley/vim-rubyhash'
+Plug 'saghul/vim-colortoggle'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimshell'
+Plug 'sickill/vim-pasta'
+Plug 'sjbach/lusty'
+Plug 'sjl/badwolf'
+Plug 'sjl/gundo.vim'
+Plug 'sjl/threesome.vim'
+Plug 'sjl/vitality.vim'
+Plug 'slim-template/vim-slim'
+Plug 'slimv.vim'
+Plug 'sophacles/vim-bundle-sparkup'
+Plug 'SrcExpl'
+Plug 't9md/vim-ruby-xmpfilter'
+Plug 'taglist.vim'
+Plug 'thoughtbot/vim-rspec'
+Plug 'toggle_words.vim'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/rbenv-sentience'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-afterimage'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-classpath'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-rvm'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-tbone'
+Plug 'tpope/vim-unimpaired'
+Plug 'Valloric/MatchTagAlways'
+Plug 'vim-ruby/vim-ruby'
+Plug 'wikitopian/hardmode'
 
-" NeoBundle 'bling/vim-airline'
-NeoBundle 'a.vim'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'brookhong/cscope.vim'
-NeoBundle 'camelcasemotion'
-NeoBundle 'chrisbra/NrrwRgn'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'colorv.vim'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'dgrnbrg/vim-redl'
-NeoBundle 'dhruvasagar/vim-table-mode'
-NeoBundle 'enomsg/vim-haskellConcealPlus'
-NeoBundle 'gabebw/vim-spec-runner'
-NeoBundle 'garbas/vim-snipmate'
-NeoBundle 'gmarik/sudo-gui.vim'
-NeoBundle 'gmarik/vundle'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'guns/vim-clojure-static'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'itspriddle/vim-marked'
-NeoBundle 'jeetsukumaran/vim-buffergator'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'Match-Bracket-for-Objective-C'
-NeoBundle 'matchit.zip'
-NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'ngmy/vim-rubocop'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'rking/vim-ruby-refactoring'
-NeoBundle 'rodjek/vim-puppet'
-NeoBundle 'rorymckinley/vim-rubyhash'
-NeoBundle 'saghul/vim-colortoggle'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimproc', {'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'}}
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'sickill/vim-pasta'
-NeoBundle 'sjbach/lusty'
-NeoBundle 'sjl/badwolf'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'sjl/threesome.vim'
-NeoBundle 'sjl/vitality.vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'slimv.vim'
-NeoBundle 'sophacles/vim-bundle-sparkup'
-NeoBundle 'SrcExpl'
-NeoBundle 'sudo.vim'
-NeoBundle 't9md/vim-ruby-xmpfilter'
-NeoBundle 'taglist.vim'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'toggle_words.vim'
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'tpope/rbenv-sentience'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-afterimage'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-characterize'
-NeoBundle 'tpope/vim-classpath'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-fireplace'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-obsession'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-rake'
-NeoBundle 'tpope/vim-rbenv'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-rhubarb'
-NeoBundle 'tpope/vim-rsi'
-NeoBundle 'tpope/vim-rvm'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-tbone'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'Valloric/MatchTagAlways'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'wikitopian/hardmode'
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+call plug#end()
 
 "==============================================================================
 " Global settings
@@ -169,6 +155,8 @@ set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start
+
+colorscheme hemisu
 
 " save when losing focus
 au FocusLost * :silent! wall
@@ -251,7 +239,6 @@ autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 
 " gui settings
 if has("gui_running")
-    colorscheme hemisu
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
@@ -375,15 +362,18 @@ autocmd FileType ruby xmap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x
 autocmd FileType ruby imap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
 
 
+
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_omni_fallback = 1
+
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
+inoremap <silent> <CR> <C-r>=<SID>neo_cr_function()<CR>
+function! s:neo_cr_function()
   return neocomplete#close_popup() . "\<CR>"
 endfunction
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
@@ -395,8 +385,8 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 
 " Enable omni completion
