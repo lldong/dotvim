@@ -18,7 +18,6 @@ Plug 'derekwyatt/vim-scala'
 Plug 'dgrnbrg/vim-redl'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'enomsg/vim-haskellConcealPlus'
-Plug 'gabebw/vim-spec-runner'
 Plug 'garbas/vim-snipmate'
 Plug 'gmarik/sudo-gui.vim'
 Plug 'godlygeek/tabular'
@@ -58,8 +57,6 @@ Plug 'sjl/badwolf'
 Plug 'sjl/gundo.vim'
 Plug 'sjl/threesome.vim'
 Plug 'sjl/vitality.vim'
-Plug 'slim-template/vim-slim'
-Plug 'slimv.vim'
 Plug 'sophacles/vim-bundle-sparkup'
 Plug 'SrcExpl'
 Plug 't9md/vim-ruby-xmpfilter'
@@ -242,7 +239,7 @@ if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=InputMonoCondensed:h14
+    set guifont=Source\ Code\ Pro:h13
     set columns=90
     set colorcolumn=80
     set lines=50
@@ -281,7 +278,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " Ack
-nmap <leader>a :Ack 
+nmap <leader>a :Ag 
 
 " Taglist
 let Tlist_Show_One_File=1
@@ -361,8 +358,6 @@ autocmd FileType ruby nmap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x
 autocmd FileType ruby xmap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
 autocmd FileType ruby imap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
 
-
-
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -399,10 +394,15 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " neosnippet
 let g:neosnippet#enable_snipmate_compatibility = 1
+
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)"
