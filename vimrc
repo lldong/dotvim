@@ -296,14 +296,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" Paredit
-au  FileType lisp call PareditInitBuffer()
-au  FileType cl   call PareditInitBuffer()
-au  FileType clj  call PareditInitBuffer()
-au  FileType cljs call PareditInitBuffer()
-au  FileType scm  call PareditInitBuffer()
-au  FileType rkt  call PareditInitBuffer()
-
 " ZoomWin
 noremap <silent><leader>zw :ZoomWin<cr>
 
