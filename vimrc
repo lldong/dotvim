@@ -17,11 +17,9 @@ Plug 'colorv.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'dgrnbrg/vim-redl'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'enomsg/vim-haskellConcealPlus'
 Plug 'garbas/vim-snipmate'
 Plug 'gmarik/sudo-gui.vim'
 Plug 'godlygeek/tabular'
-Plug 'guns/vim-clojure-static'
 Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -37,6 +35,7 @@ Plug 'matchit.zip'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ngmy/vim-rubocop'
+Plug 'paredit.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'rking/vim-ruby-refactoring'
@@ -79,6 +78,7 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-haml'
+Plug 'tpope/vim-leiningen'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-ragtag'
@@ -333,6 +333,14 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " vim-ruby-xmpfilter
 let g:xmpfilter_cmd = "seeing_is_believing"
+
+" Paredit
+au FileType lisp call PareditInitBuffer()
+au FileType cl   call PareditInitBuffer()
+au FileType clj  call PareditInitBuffer()
+au FileType cljs call PareditInitBuffer()
+au FileType scm  call PareditInitBuffer()
+au FileType rkt  call PareditInitBuffer()"
 
 autocmd FileType ruby nmap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
 autocmd FileType ruby xmap <buffer> <leader>mm <Plug>(seeing_is_believing-mark)
