@@ -9,6 +9,7 @@ Plug 'a.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'bling/vim-airline'
 Plug 'brookhong/cscope.vim'
 Plug 'camelcasemotion'
 Plug 'chrisbra/NrrwRgn'
@@ -27,7 +28,6 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'Lokaltog/vim-powerline'
 Plug 'majutsushi/tagbar'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Match-Bracket-for-Objective-C'
@@ -60,6 +60,7 @@ Plug 'sophacles/vim-bundle-sparkup'
 Plug 'SrcExpl'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'taglist.vim'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec'
 Plug 'toggle_words.vim'
 Plug 'tomtom/tlib_vim'
@@ -97,7 +98,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/MatchTagAlways'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wikitopian/hardmode'
-
 call plug#end()
 
 "==============================================================================
@@ -413,8 +413,17 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " embrace the hard mode
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" git-gutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+
+" vim-airline
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
 
 " toggle relative number 
 function! NumberToggle()
