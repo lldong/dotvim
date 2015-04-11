@@ -5,6 +5,8 @@
 
 call plug#begin('~/.vim/plugged')
 
+" Plug 'Shougo/neosnippet'
+" Plug 'Shougo/neosnippet-snippets'
 Plug 'a.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
@@ -13,17 +15,23 @@ Plug 'bling/vim-airline'
 Plug 'brookhong/cscope.vim'
 Plug 'camelcasemotion'
 Plug 'chrisbra/NrrwRgn'
+Plug 'chrisbra/vim-diff-enhanced'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'colorv.vim'
+Plug 'dag/vim2hs'
 Plug 'derekwyatt/vim-scala'
 Plug 'dgrnbrg/vim-redl'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
 Plug 'garbas/vim-snipmate'
 Plug 'gmarik/sudo-gui.vim'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 Plug 'itspriddle/vim-marked'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'jpalardy/vim-slime'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -45,12 +53,12 @@ Plug 'saghul/vim-colortoggle'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/vimshell'
 Plug 'sickill/vim-pasta'
+Plug 'SirVer/ultisnips'
 Plug 'sjbach/lusty'
 Plug 'sjl/badwolf'
 Plug 'sjl/gundo.vim'
@@ -153,8 +161,6 @@ set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start
 
-colorscheme hemisu
-
 " save when losing focus
 au FocusLost * :silent! wall
 
@@ -233,6 +239,9 @@ nnoremap <Leader>} :%s/\([^ ]\)}/\1 }/gc<CR>
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
+
+set background=dark
+colorscheme tomorrow_night_eighties
 
 " gui settings
 if has("gui_running")
@@ -393,26 +402,35 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " neosnippet
-let g:neosnippet#enable_snipmate_compatibility = 1
+" let g:neosnippet#enable_snipmate_compatibility = 1
 
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
+" " For snippet_complete marker.
+" if has('conceal')
+"   set conceallevel=2 concealcursor=i
+" endif
 
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
+" imap <C-k> <Plug>(neosnippet_expand_or_jump)
+" smap <C-k> <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k> <Plug>(neosnippet_expand_target)
 
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
+" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"       \ "\<Plug>(neosnippet_expand_or_jump)"
+"       \: pumvisible() ? "\<C-n>" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"       \ "\<Plug>(neosnippet_expand_or_jump)"
+"       \: "\<TAB>"
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
 
 " embrace the hard mode
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" neco-ghc
+let g:necoghc_enable_detailed_browse = 1 
+
+" vim2hs
+let g:haskell_conceal_wide = 1
 
 " git-gutter
 let g:gitgutter_realtime = 0
@@ -431,3 +449,5 @@ function! NumberToggle()
 endfunc
 nnoremap <leader>rn :call NumberToggle()<cr>
 
+" slime-vim
+let g:slime_target = "tmux"
