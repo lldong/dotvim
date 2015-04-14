@@ -49,7 +49,6 @@ Plug 'rking/ag.vim'
 Plug 'rking/vim-ruby-refactoring'
 Plug 'rodjek/vim-puppet'
 Plug 'rorymckinley/vim-rubyhash'
-Plug 'saghul/vim-colortoggle'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
@@ -158,6 +157,8 @@ set fo-=r
 set nolist
 set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 
+colorscheme tomorrow_night_eighties
+
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start
 
@@ -240,8 +241,6 @@ autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 
-colorscheme tomorrow_night_eighties
-
 " gui settings
 if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
@@ -253,6 +252,7 @@ if has("gui_running")
     set lines=50
     set macmeta
     set clipboard=unnamed
+    colorscheme tomorrow_night_eighties
 endif
 
 " remove trailing whitespace
@@ -317,10 +317,6 @@ autocmd FileType nerdtree setlocal norelativenumber
 " Capslock 
 " nmap <Leader>i i<Plug>CapsLockToggle
 imap <C-L> <C-O><Plug>CapsLockToggle
-
-" vim-colortoggle
-noremap <silent><F6> :ToggleBg<cr>
-let g:default_background_type="light"
 
 " tagbar
 let g:tagbar_type_javascript = {
