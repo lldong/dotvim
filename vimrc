@@ -240,7 +240,6 @@ autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
 
-set background=dark
 colorscheme tomorrow_night_eighties
 
 " gui settings
