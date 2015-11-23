@@ -10,14 +10,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'a.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'bling/vim-airline'
 Plug 'brookhong/cscope.vim'
 Plug 'camelcasemotion'
 Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'colorv.vim'
 Plug 'dag/vim2hs'
 Plug 'derekwyatt/vim-scala'
 Plug 'dgrnbrg/vim-redl'
@@ -28,8 +25,6 @@ Plug 'garbas/vim-snipmate'
 Plug 'gmarik/sudo-gui.vim'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'honza/vim-snippets'
-Plug 'itspriddle/vim-marked'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'jpalardy/vim-slime'
 Plug 'kchmck/vim-coffee-script'
@@ -47,8 +42,6 @@ Plug 'paredit.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'rking/vim-ruby-refactoring'
-Plug 'rodjek/vim-puppet'
-Plug 'rorymckinley/vim-rubyhash'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
@@ -59,7 +52,6 @@ Plug 'Shougo/vimshell'
 Plug 'sickill/vim-pasta'
 Plug 'SirVer/ultisnips'
 Plug 'sjbach/lusty'
-Plug 'sjl/badwolf'
 Plug 'sjl/gundo.vim'
 Plug 'sjl/threesome.vim'
 Plug 'sjl/vitality.vim'
@@ -67,9 +59,7 @@ Plug 'sophacles/vim-bundle-sparkup'
 Plug 'SrcExpl'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'taglist.vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec'
-Plug 'toggle_words.vim'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/rbenv-sentience'
 Plug 'tpope/vim-abolish'
@@ -206,8 +196,6 @@ let mapleader=","
 
 nnoremap <silent><leader>l :set list!<cr>
 
-nnoremap <leader><leader> <c-^>
-
 " completion mapping
 inoremap ^] ^X^]
 inoremap ^F ^X^F
@@ -246,7 +234,7 @@ if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=Source\ Code\ Pro:h13
+    set guifont=PragmataPro:h13 " Source\ Code\ Pro:h13
     set columns=90
     set colorcolumn=80
     set lines=50
