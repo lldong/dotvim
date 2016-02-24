@@ -13,20 +13,12 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'brookhong/cscope.vim'
 Plug 'camelcasemotion'
-Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'dag/vim2hs'
-Plug 'derekwyatt/vim-scala'
-Plug 'dgrnbrg/vim-redl'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
 Plug 'garbas/vim-snipmate'
-Plug 'gmarik/sudo-gui.vim'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
-Plug 'jpalardy/vim-slime'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -51,7 +43,6 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/vimshell'
 Plug 'sickill/vim-pasta'
 Plug 'SirVer/ultisnips'
-Plug 'sjbach/lusty'
 Plug 'sjl/gundo.vim'
 Plug 'sjl/threesome.vim'
 Plug 'sjl/vitality.vim'
@@ -240,7 +231,8 @@ if has("gui_running")
     set lines=50
     set macmeta
     set clipboard=unnamed
-    colorscheme tomorrow_night_eighties
+    set background=light
+    colorscheme solarized
 endif
 
 " remove trailing whitespace
@@ -409,12 +401,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " embrace the hard mode
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
-" neco-ghc
-let g:necoghc_enable_detailed_browse = 1 
-
-" vim2hs
-let g:haskell_conceal_wide = 1
-
 " git-gutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
@@ -432,5 +418,3 @@ function! NumberToggle()
 endfunc
 nnoremap <leader>rn :call NumberToggle()<cr>
 
-" slime-vim
-let g:slime_target = "tmux"
