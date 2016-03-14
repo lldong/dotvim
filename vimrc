@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'a.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'bling/vim-airline'
 Plug 'brookhong/cscope.vim'
 Plug 'camelcasemotion'
 Plug 'chrisbra/vim-diff-enhanced'
@@ -19,7 +18,6 @@ Plug 'garbas/vim-snipmate'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
-Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Lokaltog/vim-easymotion'
@@ -27,9 +25,9 @@ Plug 'majutsushi/tagbar'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Match-Bracket-for-Objective-C'
 Plug 'matchit.zip'
-Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ngmy/vim-rubocop'
+Plug 'othree/yajs.vim'
 Plug 'paredit.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
@@ -43,15 +41,8 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/vimshell'
 Plug 'sickill/vim-pasta'
 Plug 'SirVer/ultisnips'
-Plug 'sjl/gundo.vim'
-Plug 'sjl/threesome.vim'
-Plug 'sjl/vitality.vim'
-Plug 'sophacles/vim-bundle-sparkup'
-Plug 'SrcExpl'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'taglist.vim'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tomtom/tlib_vim'
 Plug 'tpope/rbenv-sentience'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-afterimage'
@@ -84,6 +75,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/MatchTagAlways'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wikitopian/hardmode'
 call plug#end()
@@ -138,7 +131,7 @@ set fo-=r
 set nolist
 set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 
-colorscheme tomorrow_night_eighties
+colorscheme solarized
 
 " allow backspacing over autoindent, linebreaks and start of insert
 set backspace=indent,eol,start
@@ -219,13 +212,15 @@ nnoremap <Leader>} :%s/\([^ ]\)}/\1 }/gc<CR>
 autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType javascript setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType javascript.jsx setlocal sts=2 ts=2 sw=2 expandtab
 
 " gui settings
 if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=PragmataPro:h13 " Source\ Code\ Pro:h13
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h13
     set columns=90
     set colorcolumn=80
     set lines=50
@@ -406,15 +401,15 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
 " vim-airline
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline_powerline_fonts = 1
 
 " toggle relative number 
 function! NumberToggle()
   set rnu!
 endfunc
 nnoremap <leader>rn :call NumberToggle()<cr>
+
+" Unite
+" nnoremap <C-p> :Unite file_rec/async<cr>
 
