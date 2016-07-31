@@ -43,9 +43,7 @@ Plug 'rking/ag.vim' " Vim plugin for the_silver_searcher
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimshell.vim'
 
 call plug#end()
 
@@ -228,3 +226,7 @@ let g:unite_source_history_yank_enable = 1
 nnoremap <Leader>f :Unite -start-insert file_rec<CR>
 nnoremap <Leader>b :Unite -start-insert buffer<CR>
 nnoremap <Leader>y :Unite history/yank<cr>
+
+" Netrw
+let g:netrw_liststyle=3
+
