@@ -44,6 +44,7 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'SirVer/ultisnips'
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
 
 call plug#end()
 
@@ -177,13 +178,8 @@ function! NumberToggle()
 endfunc
 nnoremap <leader>rn :call NumberToggle()<cr>
 
-" " Filetypes
-" autocmd FileType ruby setlocal sts=2 ts=2 sw=2 expandtab
-" autocmd FileType erb setlocal sts=2 ts=2 sw=2 expandtab
-" autocmd FileType html setlocal sts=2 ts=2 sw=2 expandtab
-" autocmd FileType coffee setlocal sts=2 ts=2 sw=2 expandtab
-" autocmd FileType javascript setlocal sts=2 ts=2 sw=2 expandtab
-" autocmd FileType javascript.jsx setlocal sts=2 ts=2 sw=2 expandtab
+" Filetypes
+autocmd FileType ruby,erb,html,coffee,javascript setlocal sts=2 ts=2 sw=2 expandtab
 
 "==============================================================================
 " Plugin settings
@@ -230,3 +226,6 @@ nnoremap <Leader>y :Unite history/yank<cr>
 " Netrw
 let g:netrw_liststyle=3
 
+" VimFiler
+let g:vimfiler_as_default_explorer=1
+nnoremap <Leader>e :VimFilerExplorer -toggle<CR>
