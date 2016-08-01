@@ -105,7 +105,7 @@ set nolist
 set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 set backspace=indent,eol,start " allow backspacing over autoindent, linebreaks and start of insert
 
-" colorscheme solarized
+colorscheme solarized
 
 " gui settings
 if has("gui_running")
