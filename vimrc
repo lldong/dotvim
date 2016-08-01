@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'tpope/vim-vinegar' " combine with netrw to create a delicious salad dressing
 Plug 'tpope/vim-rsi' " Readline style insertion
 Plug 'tpope/vim-eunuch' " helpers for UNIX 
+Plug 'tpope/vim-vinegar' " combine with netrw to create a delicious salad dressing
 
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
@@ -43,14 +44,21 @@ Plug 'rking/ag.vim' " Vim plugin for the_silver_searcher
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
 " ==============================================================================
 "  Global settings
 " ==============================================================================
+
+set nocompatible        " We're running Vim, not Vi!
+syntax on               " turn on syntax highlighting
+filetype on             " Enable filetype detection
+filetype indent on      " Enable filetype-specific indenting
+filetype plugin on      " Enable filetype-specific plugins
+
 set encoding=utf-8
 set fileencoding=utf-8
 set hidden              " change buffers without saving
@@ -74,7 +82,6 @@ set directory=~/.vim-tmp,/var/tmp,/tmp
 set complete=.,b,u,]    " completions search order
 set re=1                " use the old regex engine to speed up ruby syntax highlighting
 
-syntax on               " turn on syntax highlighting
 set background=light    " use light background by default
 set laststatus=2        " always show the status line
 set showmode            " show what mode you are in
@@ -179,7 +186,9 @@ endfunc
 nnoremap <leader>rn :call NumberToggle()<cr>
 
 " Filetypes
-autocmd FileType ruby,erb,html,coffee,javascript setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 "==============================================================================
 " Plugin settings
@@ -217,15 +226,13 @@ autocmd FileType ruby nmap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x
 autocmd FileType ruby xmap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
 autocmd FileType ruby imap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x)
 
-" Unite
-let g:unite_source_history_yank_enable = 1
-nnoremap <Leader>f :Unite -start-insert file_rec<CR>
-nnoremap <Leader>b :Unite -start-insert buffer<CR>
-nnoremap <Leader>y :Unite history/yank<cr>
-
 " Netrw
 let g:netrw_liststyle=3
 
-" VimFiler
-let g:vimfiler_as_default_explorer=1
-nnoremap <Leader>e :VimFilerExplorer -toggle<CR>
+" NERDTree
+map <f2> :NERDTreeToggle<CR>
+nmap ,r :NERDTreeFind<CR>
+" open a NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
