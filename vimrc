@@ -30,7 +30,6 @@ Plug 'wikitopian/hardmode'
 Plug 'mattn/emmet-vim'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'jiangmiao/auto-pairs' " The missing motion for Vim
-Plug 'mhinz/vim-signify' " Show a diff via Vim sign column
 
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'dhruvasagar/vim-table-mode' " VIM Table Mode for instant table creation.
@@ -106,7 +105,7 @@ set nolist
 set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 set backspace=indent,eol,start " allow backspacing over autoindent, linebreaks and start of insert
 
-colorscheme solarized
+" colorscheme solarized
 
 " gui settings
 if has("gui_running")
@@ -232,7 +231,4 @@ let g:netrw_liststyle=3
 " NERDTree
 map <f2> :NERDTreeToggle<CR>
 nmap ,r :NERDTreeFind<CR>
-" open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
