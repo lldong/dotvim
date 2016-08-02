@@ -25,6 +25,8 @@ Plug 'tpope/vim-vinegar' " combine with netrw to create a delicious salad dressi
 
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-flagship'
 
 Plug 'wikitopian/hardmode'
 Plug 'mattn/emmet-vim'
@@ -34,7 +36,7 @@ Plug 'jiangmiao/auto-pairs' " The missing motion for Vim
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'dhruvasagar/vim-table-mode' " VIM Table Mode for instant table creation.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed!
-Plug 'justinmk/vim-sneak' " The missing motion for Vim
+" Plug 'justinmk/vim-sneak' " The missing motion for Vim
 
 Plug 'matchit.zip'
 Plug 'taglist.vim'
@@ -104,15 +106,16 @@ set fo-=r
 set nolist
 set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 set backspace=indent,eol,start " allow backspacing over autoindent, linebreaks and start of insert
+set showtabline=2
 
 colorscheme solarized
 
 " gui settings
 if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
-    set guioptions=                     " get rid of all gui elements
+    set guioptions-=e                   " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=SauceCodePowerline-Light:h14
+    set guifont=SFMono-Regular:h13
     set columns=90
     set colorcolumn=80
     set lines=50
@@ -227,8 +230,19 @@ autocmd FileType ruby imap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x
 
 " Netrw
 let g:netrw_liststyle=3
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " NERDTree
 map <f2> :NERDTreeToggle<CR>
-nmap ,r :NERDTreeFind<CR>
+nmap <leader>r :NERDTreeFind<CR>
+
+" CtrlP
+nmap <leader>b :CtrlPBuffer<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|gem)$'
+
+" GitGutter
+let g:gitgutter_enabled=0
+let g:gitgutter_diff_args='-w'
+nmap <leader>g :GitGutterToggle<CR>
 
