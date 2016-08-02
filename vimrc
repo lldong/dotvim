@@ -23,6 +23,7 @@ Plug 'tpope/vim-rsi' " Readline style insertion
 Plug 'tpope/vim-eunuch' " helpers for UNIX 
 Plug 'tpope/vim-vinegar' " combine with netrw to create a delicious salad dressing
 
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -113,7 +114,7 @@ colorscheme solarized
 " gui settings
 if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
-    set guioptions-=e                   " get rid of all gui elements
+    set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
     set guifont=SFMono-Regular:h13
     set columns=90
