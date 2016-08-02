@@ -37,7 +37,6 @@ Plug 'jiangmiao/auto-pairs' " The missing motion for Vim
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'dhruvasagar/vim-table-mode' " VIM Table Mode for instant table creation.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed!
-" Plug 'justinmk/vim-sneak' " The missing motion for Vim
 
 Plug 'matchit.zip'
 Plug 'taglist.vim'
