@@ -226,7 +226,7 @@ nmap <leader>g :GitGutterToggle<CR>
 
 " FZF
 nnoremap <C-p> :Files<Cr>
-nnoremap <leader>a :Rg<Cr>
+nnoremap <leader>r :Rg<Cr>
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
