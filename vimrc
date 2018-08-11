@@ -5,7 +5,6 @@
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'tpope/vim-bundler'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
@@ -26,8 +25,11 @@ Plug 'tpope/vim-vinegar' " combine with netrw to create a delicious salad dressi
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-flagship'
+Plug 'airblade/vim-gitgutter'
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 Plug 'wikitopian/hardmode'
 Plug 'mattn/emmet-vim'
@@ -38,14 +40,8 @@ Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'dhruvasagar/vim-table-mode' " VIM Table Mode for instant table creation.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed!
 
-Plug 'matchit.zip'
-Plug 'taglist.vim'
-
-Plug 'rking/ag.vim' " Vim plugin for the_silver_searcher
+Plug 'andymass/vim-matchup' " even better % navigate and highlight matching words
 Plug 'altercation/vim-colors-solarized'
-
-Plug 'SirVer/ultisnips'
-Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 
 call plug#end()
@@ -83,7 +79,7 @@ set directory=~/.vim-tmp,/var/tmp,/tmp
 set complete=.,b,u,]    " completions search order
 set re=1                " use the old regex engine to speed up ruby syntax highlighting
 
-set background=light    " use light background by default
+set background=dark     " use dark background by default
 set laststatus=2        " always show the status line
 set showmode            " show what mode you are in
 set nohlsearch          " do not highlight for searched phrases
@@ -121,7 +117,7 @@ if has("gui_running")
     set lines=50
     set macmeta
     set clipboard=unnamed
-    set background=light
+    set background=dark
 endif
 
 " remap <leader> to ','
@@ -196,19 +192,6 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " Plugin settings
 "==============================================================================
 
-" Ack
-nmap <leader>a :Ag 
-
-" Taglist
-let Tlist_Show_One_File=1
-let Tlist_Display_Prototype=1
-let Tlist_Display_Tag_Scope=0
-let Tlist_Enable_Fold_Column=0
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let Tlist_Use_Right_Window=1
-let Tlist_WinWidth=40
-noremap <silent> <F3> :TlistToggle<cr>
-
 " vim-ruby-xmpfilter
 let g:xmpfilter_cmd = "bundle exec seeing_is_believing"
 
@@ -236,13 +219,19 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 map <f2> :NERDTreeToggle<CR>
 nmap <leader>r :NERDTreeFind<CR>
 
-" CtrlP
-nmap <leader>b :CtrlPBuffer<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|gem)$'
-
 " GitGutter
 let g:gitgutter_enabled=0
 let g:gitgutter_diff_args='-w'
 nmap <leader>g :GitGutterToggle<CR>
+
+" FZF
+nnoremap <C-p> :Files<Cr>
+nnoremap <leader>a :Rg<Cr>
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
