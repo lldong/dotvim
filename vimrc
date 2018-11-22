@@ -39,10 +39,11 @@ Plug 'jiangmiao/auto-pairs' " The missing motion for Vim
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'dhruvasagar/vim-table-mode' " VIM Table Mode for instant table creation.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed!
-
 Plug 'andymass/vim-matchup' " even better % navigate and highlight matching words
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
+Plug 'ahw/vim-pbcopy'
+Plug 'atelierbram/Base2Tone-vim'
 
 call plug#end()
 
@@ -104,14 +105,16 @@ set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 set backspace=indent,eol,start " allow backspacing over autoindent, linebreaks and start of insert
 set showtabline=2
 
-colorscheme solarized
+" colorscheme solarized
+colorscheme Base2Tone_SeaDark
+
 
 " gui settings
 if has("gui_running")
     set fuoptions=maxvert,maxhorz       " full screen means FULL screen
     set guioptions=                     " get rid of all gui elements
     set mousehide                       " hide the mouse cursor when typing
-    set guifont=SFMono-Regular:h13
+    set guifont=Iosevka-Light:h16
     set columns=90
     set colorcolumn=80
     set lines=50
@@ -122,9 +125,6 @@ endif
 
 " remap <leader> to ','
 let mapleader="," 
-
-" yank to OS X clipboard
-vmap <C-c> :w !pbcopy<CR><CR> 
 
 " enter full-screen mode
 noremap  <F1> :set invfullscreen<cr>
