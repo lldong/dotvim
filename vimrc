@@ -9,7 +9,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with
@@ -20,8 +19,6 @@ Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'tpope/vim-vinegar' " combine with netrw to create a delicious salad dressing
 Plug 'tpope/vim-rsi' " Readline style insertion
 Plug 'tpope/vim-eunuch' " helpers for UNIX 
-Plug 'tpope/vim-vinegar' " combine with netrw to create a delicious salad dressing
-
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
@@ -35,15 +32,16 @@ Plug 'wikitopian/hardmode'
 Plug 'mattn/emmet-vim'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'jiangmiao/auto-pairs' " The missing motion for Vim
-
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'dhruvasagar/vim-table-mode' " VIM Table Mode for instant table creation.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed!
 Plug 'andymass/vim-matchup' " even better % navigate and highlight matching words
 Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree'
 Plug 'ahw/vim-pbcopy'
 Plug 'atelierbram/Base2Tone-vim'
+Plug 'wincent/terminus'
+Plug 'sheerun/vim-polyglot'
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -214,10 +212,6 @@ autocmd FileType ruby imap <buffer> <leader>xr <Plug>(seeing_is_believing-run_-x
 " Netrw
 let g:netrw_liststyle=3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-
-" NERDTree
-map <f2> :NERDTreeToggle<CR>
-nmap <leader>r :NERDTreeFind<CR>
 
 " GitGutter
 let g:gitgutter_enabled=0
