@@ -103,9 +103,8 @@ set listchars=tab:▸\ ,trail:▝,eol:¬,extends:>,nbsp:_,precedes:<
 set backspace=indent,eol,start " allow backspacing over autoindent, linebreaks and start of insert
 set showtabline=2
 
-" colorscheme solarized
-colorscheme Base2Tone_SeaDark
-
+" colorscheme
+colorscheme Base2Tone_EveningDark
 
 " gui settings
 if has("gui_running")
