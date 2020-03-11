@@ -43,6 +43,13 @@ Plug 'wincent/terminus'
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" https://github.com/camspiers/lens.vim
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
+
 call plug#end()
 
 " ==============================================================================
