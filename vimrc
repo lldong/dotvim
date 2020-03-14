@@ -172,6 +172,11 @@ nnoremap ? ?\v
 " make 'Y' yank from the cursor to the end of line
 nnoremap Y y$
 
+" Yank
+nnoremap <leader>yp :let @+=expand("%:p")<CR>
+nnoremap <leader>yl :let @+=expand('%:t') . ':' . line(".")<CR>
+nnoremap <leader>yc :let @+=expand('%:t') . ':' . line( "."). ':' . col(".")<CR>
+
 " open/source my vimrc file more quickly
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
