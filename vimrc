@@ -56,6 +56,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'AndrewRadev/sideways.vim'
 
 call plug#end()
 
