@@ -42,7 +42,6 @@ Plug 'atelierbram/Base2Tone-vim'
 Plug 'wincent/terminus'
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
-Plug 'dart-lang/dart-vim-plugin'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
